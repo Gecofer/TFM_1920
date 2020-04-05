@@ -1,6 +1,6 @@
-**Repositorio para el TFM del Máster TECI en el curso 2019/2020**
-
 # Malware Detection
+
+**Repositorio para el TFM del Máster TECI en el curso 2019/2020**
 
 ## Antecedentes
 Concurso de Kaggle: https://www.kaggle.com/c/microsoft-malware-prediction
@@ -33,6 +33,8 @@ La metodología de muestreo utilizada para crear este conjunto de datos se dise�
 
 - [Overleaf](https://www.overleaf.com/read/rgxgsvwfsnms)
 
-### Soluciones
 
+<!------
+### Soluciones
 - https://github.com/imor-de/microsoft_malware_prediction_kaggle_2nd
+----->
