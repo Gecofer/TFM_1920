@@ -3,9 +3,11 @@
 **Repositorio para el TFM del Máster TECI en el curso 2019/2020**
 
 ## Antecedentes
+
 Concurso de Kaggle: https://www.kaggle.com/c/microsoft-malware-prediction
 
-## Goal
+## Objetivo
+
 Anticipar el ataque de virus en sistemas W.indows
 
 ## Desafíos
