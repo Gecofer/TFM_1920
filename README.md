@@ -28,7 +28,7 @@ La detección de malware es un problema propio de series temporales, pero se com
 
 ## Notebooks <a name="id3"></a>
 
-- [`1-MicrosoftMalwarePrediction-CargarVisualizar`](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/1-MicrosoftMalwarePrediction-CargarVisualizar.ipynb) contiene el análisis descriptivo de los datos y un estudio exhaustivo de lo que significa cada variable.
+- [`1-MicrosoftMalwarePrediction-CargarVisualizar`](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/1-MicrosoftMalwarePrediction-CargarVisualizar.ipynb) contiene el análisis descriptivo de los datos y un estudio exhaustivo de lo que significa cada variable 
 
 <p align="center">
   <img src="docs/imagenes/tipos_variables.png">
@@ -46,7 +46,7 @@ La detección de malware es un problema propio de series temporales, pero se com
   <img src="docs/imagenes/missings10.png">
 </p>
 
-- [`2-MicrosoftMalwarePrediction-Preprocesamiento`](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/2-MicrosoftMalwarePrediction-Preprocesamiento.ipynb) contiene el preprocesamiento y tratamiento de los datos.
+- [`2-MicrosoftMalwarePrediction-Preprocesamiento`](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/2-MicrosoftMalwarePrediction-Preprocesamiento.ipynb) contiene el preprocesamiento y tratamiento de los datos (el PDF del notebook se encuentra [aquí](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/2-MicrosoftMalwarePrediction-Preprocesamiento.pdf)).
   - Eliminar variables que no aportan información
   - Análisis de Componentes Principales (PCA)
   - Missings
@@ -72,7 +72,7 @@ La detección de malware es un problema propio de series temporales, pero se com
   <img width="500" height="400" src="docs/imagenes/CountryIdentifier.png">
 </p>  
 
-- [`3-MicrosoftMalwarePrediction-Kaggle.ipynb`](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/3-MicrosoftMalwarePrediction-Kaggle.ipynb) contiene un ejemplo con el algoritmo LightGBM para comprobar el submission en Kaggle (el PDF del notebook se encuentra [aquí](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/3-MicrosoftMalwarePrediction-Kaggle.pdf))
+- [`3-MicrosoftMalwarePrediction-Kaggle.ipynb`](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/3-MicrosoftMalwarePrediction-Kaggle.ipynb) contiene un ejemplo con el algoritmo LightGBM para comprobar el submission en Kaggle (el PDF del notebook se encuentra [aquí](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/3-MicrosoftMalwarePrediction-Kaggle.pdf)).
 
 
 ## Referencias <a name="id20"></a>
