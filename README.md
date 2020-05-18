@@ -1,7 +1,5 @@
 **Repositorio para el TFM del Máster TECI en el curso 2019/2020**
 
-Autora: Gema Correa Fernández
-
 ## Objetivo
 
 MLOps y cómo industrializar el uso de Machine Learning: un ejemplo práctico para anticipar el malware en sistemas Windows
