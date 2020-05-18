@@ -1,12 +1,13 @@
 # Trabajo de Fin de Máster
 
-Repositorio para el TFM del Máster TECI en el curso 2019/2020, realizado por Gema Correa Fernández.
+Repositorio para el Trabajo de Fin de Máster (TFM) del Máster Universitario en Tratamiento Estadístico Computacional de la Información (TECI) en el curso 2019/2020, realizado por Gema Correa Fernández.
 
 **Tabla de Contenidos**
 
 - [Objetivo](#id0)
   - [Desafíos](#id1)
   - [Datos](#id2) 
+- [Notebooks](#id3) 
 - [Referencias](#id20)
   - [Información administrativa sobre el TFM](#id21)
 - [Licencia](#id23)
@@ -25,7 +26,7 @@ El objetivo de este dataset es **predecir la probabilidad de que una máquina Wi
 
 La detección de malware es un problema propio de series temporales, pero se complica al introducir nuevas máquinas, conexiones entre máquinas, máquinas con parches, máquinas con programas beta, máquinas con nuevos sistemas operativos, etc. Es importante, destacar que este conjunto de datos no es representativo de las máquinas de los clientes de Microsoft en la naturaleza; ya que está muestreado para incluir una proporción mucho mayor de máquinas de malware.
 
-## Notebooks
+## Notebooks <a name="id3"></a>
 
 - [`1-MicrosoftMalwarePrediction-CargarVisualizar`](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/1-MicrosoftMalwarePrediction-CargarVisualizar.ipynb) contiene el análisis descriptivo de los datos y un estudio exhaustivo de lo que significa cada variable.
 
@@ -40,7 +41,6 @@ La detección de malware es un problema propio de series temporales, pero se com
 <p align="center">
   <img src="docs/imagenes/missings60.png">
 </p>
-
 
 <p align="center">
   <img src="docs/imagenes/missings10.png">
@@ -68,7 +68,9 @@ La detección de malware es un problema propio de series temporales, pero se com
     - Label Encoding para columnas categóricas
     - Estudiar la correlación
 
-  
+<p align="center">
+  <img width="500" height="400" src="docs/imagenes/CountryIdentifier.png">
+</p>  
 
 
 
