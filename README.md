@@ -28,7 +28,7 @@ La detección de malware es un problema propio de series temporales, pero se com
 
 ## Notebooks <a name="id3"></a>
 
-- [`1-MicrosoftMalwarePrediction-CargarVisualizar`](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/1-MicrosoftMalwarePrediction-CargarVisualizar.ipynb) contiene el análisis descriptivo de los datos y un estudio exhaustivo de lo que significa cada variable 
+- [`1-MicrosoftMalwarePrediction-CargarVisualizar`](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/1-MicrosoftMalwarePrediction-CargarVisualizar.ipynb) contiene el análisis descriptivo de los datos y un estudio exhaustivo de lo que significa cada variable (el PDF del notebook se encuentra [aquí](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/1-MicrosoftMalwarePrediction-CargarVisualizar.pdf)).
 
 <p align="center">
   <img src="docs/imagenes/tipos_variables.png">
