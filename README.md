@@ -1,3 +1,5 @@
+# Trabajo de Fin de Máster
+
 Repositorio para el TFM del Máster TECI en el curso 2019/2020, realizado por Gema Correa Fernández.
 
 **Tabla de Contenidos**
@@ -9,15 +11,15 @@ Repositorio para el TFM del Máster TECI en el curso 2019/2020, realizado por Ge
   - [Información administrativa sobre el TFM](#id21)
 - [Licencia](#id23)
   
-# Objetivo <a name="id0"></a>
+## Objetivo <a name="id0"></a>
 
 MLOps y cómo industrializar el uso de Machine Learning: un ejemplo práctico para anticipar el malware en sistemas Windows
 
-## Desafíos <a name="id1"></a>
+### Desafíos <a name="id1"></a>
 
 En este trabajo se **desarrolla el enfoque actual de MLOps, desde la perspectiva de las empresas en España y su posible introducción al campo académico**. Además, se abordan distintos aspectos metodológicos, se proponen varias alternativas de arquitectura (herramientas y configuración del sistema) para llevar a cabo un MLOps de éxito. En términos generales, MLOps se basa en los principios y las prácticas de DevOps para aumentar la eficacia de los flujos de trabajo en los proyectos de Machine Learning. Asimismo, se presenta MLOps en casos reales de empresas donde el objetivo de negocio es detectar (predecir) la ocurrencia de un evento - como puede ser el fraude de transacciones online o el malware informático, entre otros. Para ello, será necesario mostrar cómo se desarrolla cada una de las etapas del proceso de modelización, incluyendo varias opciones de creación de variables para el modelo y métricas de diagnosis y selección de modelos de clasificación. Además, de introducir MLflow, plataforma que nos permite gestionar todo el ciclo de vida de Machine Learning.
 
-## Datos <a name="id2"></a>
+### Datos <a name="id2"></a>
 
 El objetivo de este dataset es **predecir la probabilidad de que una máquina Windows se infecte por varias familias de malware, en función de las diferentes propiedades de esa máquina**. Los datos de telemetría que contienen estas propiedades y las infecciones de la máquina se generaron mediante la combinación de informes y amenazas recopilados por la solución de protección de Microsoft, Windows Defender. Los datos con los que vamos a trabajar han sido obtenidos de Kaggle (https://www.kaggle.com/c/microsoft-malware-prediction/data). Para poder realizar su extracción, es necesario aceptar las reglas. Cada fila de este conjunto de datos corresponde a una máquina, identificada de forma exclusiva por un identificador `MachineIdentifier`, donde `HasDetections` indica que se detectó malware en la máquina (0 FALSO, 1 VERDADERO). Usando la información y las etiquetas en `train.csv`, se debe predecir el valor de `HasDetections` en una máquina nueva.
 
@@ -44,7 +46,29 @@ La detección de malware es un problema propio de series temporales, pero se com
   <img src="docs/imagenes/missings10.png">
 </p>
 
+2. [`2-MicrosoftMalwarePrediction-Preprocesamiento`](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/2-MicrosoftMalwarePrediction-Preprocesamiento.ipynb) contiene el preprocesamiento y tratamiento de los datos.
+  - Eliminar variables que no aportan información
+  - Análisis de Componentes Principales (PCA)
+  - Missings
+    - Missings por columnas
+    - Missings por filas
+  - Pasar a minúsculas las variables categóricas
+  - Transformar variables
+    - Transformar missings a 'unknown' en variables categóricas
+    - Fusionar la etiqueta 'unspecified' con 'unknown'
+    - Fusionar la etiqueta 'portable' con 'notebook' en `Census_ChassisTypeName`
+    - Cambiar la etiqueta 'promt' por 'prompt' en `SmartScreen`
+    - Arreglar `Census_OSEdition`
+    - Arreglar `Census_OSInstallTypeName`
+    - Agrupar valores de `Census_TotalPhysicalRAM`
+    - Agrupar valores de `Census_SystemVolumeTotalCapacity`
+    - Agrupar valores de `Census_PrimaryDiskTotalCapacity`
+  - Outliers
+  - Correlación
+    - Label Encoding para columnas categóricas
+    - Estudiar la correlación
 
+  
 
 
 
