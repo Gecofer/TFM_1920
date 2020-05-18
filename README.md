@@ -27,7 +27,7 @@ La detección de malware es un problema propio de series temporales, pero se com
 
 ## Notebooks
 
-1. [`MicrosoftMalwarePrediction-CargarVisualizar`](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/1-MicrosoftMalwarePrediction-CargarVisualizar.ipynb) contiene el análisis descriptivo de los datos y un estudio exhaustivo de lo que significa cada variable.
+- [`1-MicrosoftMalwarePrediction-CargarVisualizar`](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/1-MicrosoftMalwarePrediction-CargarVisualizar.ipynb) contiene el análisis descriptivo de los datos y un estudio exhaustivo de lo que significa cada variable.
 
 <p align="center">
   <img src="docs/imagenes/tipos_variables.png">
@@ -46,7 +46,7 @@ La detección de malware es un problema propio de series temporales, pero se com
   <img src="docs/imagenes/missings10.png">
 </p>
 
-2. [`2-MicrosoftMalwarePrediction-Preprocesamiento`](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/2-MicrosoftMalwarePrediction-Preprocesamiento.ipynb) contiene el preprocesamiento y tratamiento de los datos.
+- [`2-MicrosoftMalwarePrediction-Preprocesamiento`](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/2-MicrosoftMalwarePrediction-Preprocesamiento.ipynb) contiene el preprocesamiento y tratamiento de los datos.
   - Eliminar variables que no aportan información
   - Análisis de Componentes Principales (PCA)
   - Missings
