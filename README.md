@@ -11,10 +11,13 @@ Repositorio para el Trabajo de Fin de Máster (TFM) del Máster Universitario en
 - [Referencias](#id20)
   - [Información administrativa sobre el TFM](#id21)
 - [Licencia](#id23)
+
+La propuesta del TFM se puede encontrar [aquí](https://github.com/Gecofer/TFM_1920/tree/master/propuesta%20TFM).
+
   
 ## Objetivo <a name="id0"></a>
 
-MLOps y cómo industrializar el uso de Machine Learning: un ejemplo práctico para anticipar el malware en sistemas Windows
+**MLOps y cómo industrializar el uso de Machine Learning: un ejemplo práctico para anticipar el malware en sistemas Windows**
 
 ### Desafíos <a name="id1"></a>
 
