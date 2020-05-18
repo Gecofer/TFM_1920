@@ -28,8 +28,24 @@ La detección de malware es un problema propio de series temporales, pero se com
 1. [`MicrosoftMalwarePrediction-CargarVisualizar`](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/1-MicrosoftMalwarePrediction-CargarVisualizar.ipynb) contiene el análisis descriptivo de los datos y un estudio exhaustivo de lo que significa cada variable.
 
 <p align="center">
-  <img width="210" height="90" src="docs/imagenes/informacion_variables.png">
+  <img src="docs/imagenes/tipos_variables.png">
 </p>
+
+<p align="center">
+  <img src="docs/imagenes/conjunto_desbalanceado.png">
+</p>
+
+<p align="center">
+  <img src="docs/imagenes/missings60.png">
+</p>
+
+
+<p align="center">
+  <img src="docs/imagenes/missings10.png">
+</p>
+
+
+
 
 
 
@@ -47,7 +63,11 @@ La detección de malware es un problema propio de series temporales, pero se com
 
 Proyecto bajo licencia [GNU GLP V3](https://github.com/Gecofer/TFM_1920/blob/master/LICENSE).
 
+
 <!------
+<p align="center">
+  <img width="210" height="90" src="docs/imagenes/tipos_variables.png">
+</p>
 ### Soluciones
 - https://github.com/imor-de/microsoft_malware_prediction_kaggle_2nd
 ### Desarrollo del TFM
