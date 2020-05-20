@@ -8,6 +8,8 @@ Repositorio para el Trabajo de Fin de Máster (TFM) del Máster Universitario en
   - [Desafíos](#id1)
   - [Datos](#id2) 
 - [Notebooks](#id3) 
+  - [Análisis Descriptivo de los datos](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/1-MicrosoftMalwarePrediction-CargarVisualizar.md)
+  - [Submission en Kaggle](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/3-MicrosoftMalwarePrediction-Kaggle.md)
 - [Referencias](#id20)
   - [Información administrativa sobre el TFM](#id21)
 - [Licencia](#id23)
