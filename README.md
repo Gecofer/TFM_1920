@@ -7,6 +7,7 @@ Repositorio para el Trabajo de Fin de Máster (TFM) del Máster Universitario en
 - [Objetivo](#id0)
   - [Desafíos](#id1)
   - [Datos](#id2) 
+    - [Información de los variables](https://github.com/Gecofer/TFM_1920/blob/master/docs/0-MicrosoftMalwarePrediction-InfoVariables.md)
 - [Notebooks](#id3) 
   - [Análisis descriptivo de los datos](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/1-MicrosoftMalwarePrediction-CargarVisualizar.md)
   - [Preprocesamiento de los datos](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/2-MicrosoftMalwarePrediction-Preprocesamiento.md)
