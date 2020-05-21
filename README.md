@@ -88,6 +88,19 @@ La detección de malware es un problema propio de series temporales, pero se com
 </p>  
 
 
+<p align="center">
+  <img width="700" height="70" src="docs/imagenes/modelos/rf01.png">
+</p>  
+
+<p align="center">
+  <img width="300" height="240" src="docs/imagenes/modelos/rf02.png">
+</p>  
+
+<p align="center">
+  <img width="700" height="350" src="docs/imagenes/modelos/rf03.png">
+</p>  
+
+
 ## Referencias <a name="id20"></a>
 
 ### Información administrativa sobre el TFM <a name="id21"></a>
