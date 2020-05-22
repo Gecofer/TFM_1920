@@ -24,6 +24,7 @@ Repositorio para el Trabajo de Fin de Máster (TFM) del Máster Universitario en
   - [Funcionamiento de la aplicación Web](#id15)
 - [Referencias](#id20)
   - [Información administrativa sobre el TFM](#id21)
+  - [Documentación sobre MLflow](#id22)
 - [Licencia](#id23)
 
 La propuesta del TFM se puede encontrar [aquí](https://github.com/Gecofer/TFM_1920/tree/master/propuesta%20TFM).
@@ -184,7 +185,7 @@ with mlflow.start_run():
 
 #### Poner en producción modelos con MLflow en local <a name="id12"></a>
 
-Para poner en producción modelos en local (después de ejecutar [`7-MicrosoftMalwarePrediction-MLflow.ipynb`](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/7-MicrosoftMalwarePrediction-MLflow.ipynb)), es necesario poner la ruta donde se encuentra el modelo creado por la herramienta MLflow, por ejemplo, mi ruta en local sería `/Users/gema/Desktop/TFM/codigo/mlruns/0/72fd515589624214b2c41bcfa44aef17/artifacts/RFmodel01` o la ruta que hay en Github (https://github.com/Gecofer/TFM_1920/tree/master/mlruns/0/326a8d2080934288afe93177737d3844/artifacts/GBmodel).
+Para poner en producción modelos en local (después de ejecutar [`7-MicrosoftMalwarePrediction-MLflow.ipynb`](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/7-MicrosoftMalwarePrediction-MLflow.ipynb)), es necesario poner la ruta donde se encuentra el modelo creado por la herramienta MLflow. Por ejemplo, mi ruta en local sería `/Users/gema/Desktop/TFM/codigo/mlruns/0/72fd515589624214b2c41bcfa44aef17/artifacts/RFmodel01` o la de Github https://github.com/Gecofer/TFM_1920/tree/master/mlruns/0/326a8d2080934288afe93177737d3844/artifacts/GBmodel.
 
 ~~~
 # Lanzar interfaz de mlflow ui (se abrirá en http://127.0.0.1:5000)
@@ -223,6 +224,11 @@ Vídeo demostrativo del funcionamiento de la aplicación Web:
 - [Información específica TFM](https://blogs.mat.ucm.es/teci/?page_id=1973)
 - [Características TFM](http://blogs.mat.ucm.es/teci/wp-content/uploads/sites/9/2016/11/caracteristica-tfm.pdf)
 - [Calendario TFM](http://blogs.mat.ucm.es/teci/wp-content/uploads/sites/9/2019/12/calendario-TFM-19-20.pdf)
+
+### Documentación sobre MLflow <a name="id22"></a>
+
+- [MLflow Documentation](https://mlflow.org/docs/latest/index.html)
+- [Intro to mlFlow in Python](https://medium.com/@jacky308082/intro-to-mlflow-in-python-d22367cbaa97)
 
 
 ## Licencia <a name="id23"></a>
