@@ -179,7 +179,7 @@ with mlflow.start_run():
 
 #### Poner en producción modelos con MLflow en local <a name="id12"></a>
 
-Para para poner en producción modelos en local (después de haber ejecutado con éxito el notebook [`7-MicrosoftMalwarePrediction-MLflow.ipynb`](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/7-MicrosoftMalwarePrediction-MLflow.ipynb), es necesario poner la ruta donde se encuentra la ejecución del modelo
+Para para poner en producción modelos en local (después de haber ejecutado con éxito el notebook [`7-MicrosoftMalwarePrediction-MLflow.ipynb`](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/7-MicrosoftMalwarePrediction-MLflow.ipynb), es necesario poner la ruta donde se encuentra el modelo creado como en Github https://github.com/Gecofer/TFM_1920/tree/master/mlruns/0/326a8d2080934288afe93177737d3844/artifacts/GBmodel o la ruta `/Users/gema/Desktop/TFM/codigo/mlruns/0/72fd515589624214b2c41bcfa44aef17/artifacts/RFmodel01`.
 
 ~~~
 # Lanzar interfaz de mlflow ui (se abrirá en http://127.0.0.1:5000)
@@ -195,19 +195,16 @@ mlflow models serve -m /Users/gema/Desktop/TFM/codigo/mlruns/0/aac82aa84f6d4b82a
 mlflow models serve -m /Users/gema/Desktop/TFM/codigo/mlruns/0/326a8d2080934288afe93177737d3844/artifacts/GBmodel -h 0.0.0.0 -p 8003
 ~~~
 
-Para lanzar la interfaz, mira este vídeo:
-
+Vídeo demostrativo para ver como lanzar la interfaz de MLflow: 
 [![VideoMLflow](https://github.com/Gecofer/TFM_1920/blob/master/docs/imagenes/videoMLflow.png)](https://youtu.be/D9DVMN4F98c)
 
-#### Poner en producción modelos con MLflow en local <a name="id12"></a>
+
+#### Poner en producción modelos con MLflow en el cloud <a name="id12"></a>
 
 
-Para lanzar la interfaz de MLflow
+### Funcionamiento de la Aplicación Web
 
-
-
-
-
+Vídeo demostrativo del funcionamiento de la aplicación web:
 [![videoAppWeb](https://github.com/Gecofer/TFM_1920/blob/master/docs/imagenes/videoAppWeb.png)](https://youtu.be/pYRvOD7wp5s)
 
 
