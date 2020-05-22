@@ -1,0 +1,1244 @@
+<!doctype html>
+
+<html lang="en">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Microsoft Malware Prediction</title>
+  </head>
+
+  <!-- Add icon library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Code CSS -->
+  <style>
+
+    /* Custom translucent site header */
+    .site-header {
+      background-color: rgba(0, 0, 0, .85);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      backdrop-filter: saturate(180%) blur(20px);
+    }
+    .site-header a {
+      color: #cfd8dc;
+      transition: ease-in-out color .15s;
+    }
+    .site-header a:hover {
+      color: #FFF;
+      text-decoration: none;
+    }
+
+    body.dark-mode {
+      background-color: #9e9e9e;
+      color: black;
+      a {
+        color: blue;
+      }
+      b {
+        color:black;
+      }
+      /* change the background color */
+      .moonbutton {
+        background-color: white;
+        color: gray;
+      }
+    }
+
+    body.light-mode {
+      background-color: white;
+      color: black;
+      a {
+        color: white;
+      }
+      .moonbutton {
+        background-color: black;
+        color: white;
+      }
+    }
+
+    .opacity {
+      background-color:rgb(255,0,0);
+      opacity:0.6; /* Opacidad 60% */
+    }
+
+    /* Extra utilities */
+    .border-top { border-top: 1px solid #e5e5e5; }
+    .border-bottom { border-bottom: 1px solid #e5e5e5; }
+    .box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
+
+    .flex-equal > * {
+      -ms-flex: 1;
+      -webkit-box-flex: 1;
+      flex: 1;
+    }
+    @media (min-width: 768px) {
+      .flex-md-equal > * {
+        -ms-flex: 1;
+        -webkit-box-flex: 1;
+        flex: 1;
+      }
+    }
+
+    .overflow-hidden { overflow: hidden; }
+
+    .boton-uno {
+      background-color: DodgerBlue;
+      border: none;
+      border-radius: 4px;
+      color: white;
+      padding: 12px 16px;
+      font-size: 10px;
+    }
+
+    .btn-uno:hover {
+      color: white;
+      background-color: #7452a8;
+      border-color: #6c757d;
+    }
+
+    .boton-tres {
+      background-color: #7452a8;
+      color: white;
+    }
+    .boton-tres:hover {
+      background: #513975;
+      color: #fff !important;
+    }
+
+    .boton-cuatro {
+      background-color: white;
+      border-color: #7452a8;
+      color: #7452a8;
+    }
+    .boton-cuatro:hover {
+      background: #513975;
+      color: #fff !important;
+    }
+
+    .bg-text{
+      color: white;
+    }
+
+    .body{
+      background-image: url("https://images.assetsdelivery.com/compings_v2/iunewind/iunewind1804/iunewind180400031.jpg");
+    }
+
+    .bg {
+      /* The image used */
+      background-image: url("https://image.freepik.com/vector-gratis/codigo-binario-fondo-negro_1302-11246.jpg");
+
+      /* Half height */
+      height: 50%;
+      width: auto;
+      opacity: 0.2;
+
+      /* Center and scale the image nicely */
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .bd-footer {
+      font-size: .875rem;
+      background-color: #f7f7f7;
+      text-align: left;
+    }
+
+    .text-muted {
+      color: #6c757d !important;
+    }
+
+    .bd-footer-links {
+      padding-left: 0;
+    }
+
+    .link {
+      padding-left: 0;
+      color: #6c757d;
+    }
+
+    code {
+      font-family: Consolas,"courier new";
+      color: #6c757d;
+      background-color: #f1f1f1;
+      padding: 2px;
+      font-size: 105%;
+    }
+
+    pre {
+      font-family: Consolas,"courier new";
+      color: #5a6168;
+      background-color: #f1f1f1;
+      padding: 2px;
+      font-size: 105%;
+    }
+
+    .formulario{
+      margin-left: 0px;
+      margin-right: 10px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+
+  </style>
+
+  <body id="mybody" class="light-mode">
+
+    <div >
+
+      <!-- Add navbar -->
+      <header class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar sticky-top" style="background-color: #7452a8">
+        <a class="navbar-brand mr-0 mr-md-2" href="/">
+          <svg class="bi bi-puzzle-fill" width="36" height="36" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M3.112 3.645A1.5 1.5 0 014.605 2H7a.5.5 0 01.5.5v.382c0 .696-.497 1.182-.872 1.469a.459.459 0 00-.115.118.113.113 0 00-.012.025L6.5 4.5v.003l.003.01c.004.01.014.028.036.053a.86.86 0 00.27.194C7.09 4.9 7.51 5 8 5c.492 0 .912-.1 1.19-.24a.86.86 0 00.271-.194.213.213 0 00.036-.054l.003-.01v-.008a.112.112 0 00-.012-.025.459.459 0 00-.115-.118c-.375-.287-.872-.773-.872-1.469V2.5A.5.5 0 019 2h2.395a1.5 1.5 0 011.493 1.645L12.645 6.5h.237c.195 0 .42-.147.675-.48.21-.274.528-.52.943-.52.568 0 .947.447 1.154.862C15.877 6.807 16 7.387 16 8s-.123 1.193-.346 1.638c-.207.415-.586.862-1.154.862-.415 0-.733-.246-.943-.52-.255-.333-.48-.48-.675-.48h-.237l.243 2.855A1.5 1.5 0 0111.395 14H9a.5.5 0 01-.5-.5v-.382c0-.696.497-1.182.872-1.469a.459.459 0 00.115-.118.113.113 0 00.012-.025L9.5 11.5v-.003l-.003-.01a.214.214 0 00-.036-.053.859.859 0 00-.27-.194C8.91 11.1 8.49 11 8 11c-.491 0-.912.1-1.19.24a.859.859 0 00-.271.194.214.214 0 00-.036.054l-.003.01v.002l.001.006a.113.113 0 00.012.025c.016.027.05.068.115.118.375.287.872.773.872 1.469v.382a.5.5 0 01-.5.5H4.605a1.5 1.5 0 01-1.493-1.645L3.356 9.5h-.238c-.195 0-.42.147-.675.48-.21.274-.528.52-.943.52-.568 0-.947-.447-1.154-.862C.123 9.193 0 8.613 0 8s.123-1.193.346-1.638C.553 5.947.932 5.5 1.5 5.5c.415 0 .733.246.943.52.255.333.48.48.675.48h.238l-.244-2.855z" clip-rule="evenodd"/>
+          </svg>
+        </a>
+
+        <div class="navbar-nav-scroll">
+          <ul class="navbar-nav bd-navbar-nav flex-row">
+            <li class="nav-item">
+              <a class="nav-link active" href="/">
+                <span class="h6">
+                  Home
+                </span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/regresion_logistica">Regresión Logística</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/random_forest">Random Forest</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/gradient_boosting">Gradient Boosting</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="http://127.0.0.1:5000/">MLflow</a>
+            </li>
+
+          </ul>
+        </div>
+
+        <ul class="navbar-nav ml-md-auto">
+
+          <li class="nav-item">
+            <a class="nav-item nav-link mr-md-2">
+              v0.1
+            </a>
+          </li>
+
+          <!-- Github -->
+          <li class="nav-item">
+            <a class="nav-item nav-link mr-md-2 btn fa fa-github" href="https://github.com/Gecofer">
+            </a>
+          </li>
+
+          <!--Linkedin -->
+          <li class="nav-item">
+            <a class="nav-item nav-link mr-md-2 btn fa fa-linkedin" href="https://www.linkedin.com/in/gema-correa/">
+            </a>
+          </li>
+
+          <button class="btn btn-secondary" name="dark_light" onclick="toggleDarkLight()">
+            <i class="fa fa-moon-o d-none d-md-inline-block" aria-hidden="true"></i>
+          </button>
+
+        </ul>
+      </header>
+      <!-- End navbar -->
+
+
+      <!-- Add text -->
+      <div class="position-relative overflow-hidden text-left" style="background-color: #f5f5f5">
+        <div class="col-md-8 p-lg-4 mx-auto my-5">
+          <h2 class="mb-3">Regresión Logística</h2>
+            <p class="lead mb-4">
+              Calcula la probabilidad de si tu dispositivo Windows se va a infectar con Regresión Logística
+            </p>
+            <pre> LogisticRegression() </pre>
+        </div>
+      </div>
+
+
+
+      <!-- Formulario -->
+      <div class="container py-3">
+      <form method="POST" action="{{url_for('probabilidad_regresion_logistica')}}">
+        <div class="container text-center">
+          <input type="submit" value="Calcular" class="btn boton-tres btn-lg mb-3 mr-md-3">
+
+          <div class="container">
+            <input type="reset" class="btn btn-lg btn-outline-secondary mb-3 float-right" value="Borrar formulario">
+            <input type="button" onclick="rellenar()" class="btn btn-lg btn-outline-secondary mb-3 float-left" value="Rellenar formulario">
+          </div>
+        </div>
+
+
+                <!-- Fila 1 -->
+                <div class="container d-md-flex py-3">
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="control-label">ProductName</label>
+
+                      <a class="fa fa-info-circle" data-toggle="popover" title="Programa de seguridad"
+                         data-content="win8defender: 4 <br /> mse: 1"
+                         data-html="true">
+                      </a>
+
+                      <input id="ProductName" name="ProductName" required type="number" placeholder="4" class="form-control">
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="control-label">EngineVersion</label>
+
+                      <a class="fa fa-info-circle" data-toggle="popover" title="Versión del motor del programa de seguridad"
+                         data-content="1.1.15200.1: 63 <br /> 1.1.15100.1: 62 <br /> 1.1.15000.2: 61"
+                         data-html="true">
+                      </a>
+
+                      <input id="EngineVersion" name="EngineVersion" required type="number" placeholder="62" class="form-control">
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="control-label">AppVersion</label>
+
+                      <a class="fa fa-info-circle" data-toggle="popover" title="Versión del cliente antimalware"
+                         data-content="4.18.1807.18075: 59 <br /> 4.18.1806.18062: 53 <br /> 4.12.16299.15: 20"
+                         data-html="true">
+                      </a>
+
+                      <input id="AppVersion" name="AppVersion" required type="number" placeholder="59" class="form-control">
+                    </div>
+                  </div>
+                </div>
+
+
+                <!-- Fila 2 -->
+                <div class="container d-md-flex py-3">
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="control-label">IsBeta</label>
+
+                      <a class="fa fa-info-circle" data-toggle="popover" title="Beta del programa de seguridad"
+                         data-content="0: no es beta <br /> 1: sí es beta"
+                         data-html="true">
+                      </a>
+
+                      <input id="IsBeta" name="IsBeta" required type="number" placeholder="0" class="form-control">
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="control-label">IsSxsPassiveMode</label>
+
+                      <a class="fa fa-info-circle" data-toggle="popover" title="Existe otro antivirus en el sistema"
+                         data-content="0: no <br /> 1: sí "
+                         data-html="true">
+                      </a>
+
+                      <input id="IsSxsPassiveMode" name="IsSxsPassiveMode" required type="number" placeholder="0" class="form-control">
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="control-label">AVProductsInstalled</label>
+
+                      <a class="fa fa-info-circle" data-toggle="popover" title="Número de antivirus instalados"
+                         data-content="Entre 0 y 7"
+                         data-html="true">
+                      </a>
+
+                      <input id="AVProductsInstalled" name="AVProductsInstalled" required type="number" placeholder="1" class="form-control">
+                    </div>
+                  </div>
+                </div>
+
+
+                <!-- Fila 3 -->
+                <div class="container d-md-flex py-3">
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="control-label">AVProductsEnabled</label>
+
+                      <a class="fa fa-info-circle" data-toggle="popover" title="Número de antivirus instalados habilitados"
+                         data-content="Entre 0 y 5"
+                         data-html="true">
+                      </a>
+
+                      <input id="AVProductsEnabled" name="AVProductsEnabled" required type="number" placeholder="1" class="form-control">
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="control-label">HasTpm</label>
+
+                      <a class="fa fa-info-circle" data-toggle="popover" title="Si la máquina tiene TPM (dispositivo de punto final con cifrado RSA)"
+                         data-content="0: no <br /> 1: sí"
+                         data-html="true">
+                      </a>
+
+                      <input id="HasTpm" name="HasTpm" required type="number" placeholder="1" class="form-control">
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="control-labsel">CountryIdentifier</label>
+
+                      <a class="fa fa-info-circle" data-toggle="popover" title="ID del país en el que se encuentra la máquina"
+                         data-content="Entre 0 y 221"
+                         data-html="true">
+                      </a>
+
+                      <input id="CountryIdentifier"name="CountryIdentifier" required type="number" placeholder="28" class="form-control">
+                    </div>
+                  </div>
+                </div>
+
+
+                <!-- Fila 4 -->
+                <div class="container d-md-flex py-3">
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="control-label">CityIdentifier</label>
+
+                      <a class="fa fa-info-circle" data-toggle="popover" title="ID de la ciudad en el que se encuentra la máquina"
+                         data-content="Entre 0 y 426859"
+                         data-html="true">
+                      </a>
+
+                      <input id="CityIdentifier" name="CityIdentifier" required type="number" placeholder="81302" class="form-control">
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="control-label">OrganizationIdentifier</label>
+
+                      <a class="fa fa-info-circle" data-toggle="popover" title="ID de la organización a la que pertenece la máquina"
+                         data-content="Entre 0 y 2706734"
+                         data-html="true">
+                      </a>
+
+                      <input id="OrganizationIdentifier" name="OrganizationIdentifier" required type="number" placeholder="15" class="form-control">
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="control-label">LocaleEnglishNameIdentifier</label>
+
+                      <a class="fa fa-info-circle" data-toggle="popover" title="Nombre en inglés del ID de configuración regional del usuario actual"
+                         data-content="Entre 0 y 275"
+                         data-html="true">
+                      </a>
+
+                      <input id="LocaleEnglishNameIdentifier" name="LocaleEnglishNameIdentifier" required type="number" placeholder="168" class="form-control">
+                    </div>
+                  </div>
+                </div>
+
+
+                <!-- Fila 5 -->
+                <div class="container d-md-flex py-3">
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="control-label">Platform</label>
+
+                      <a class="fa fa-info-circle" data-toggle="popover" title="Nombre de la plataforma"
+                         data-content="windows10: 0 <br /> windows8: 2 <br /> windows7: 1 "
+                         data-html="true">
+                      </a>
+
+                      <input id="Platform" name="Platform" required type="number" placeholder="0" class="form-control">
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="control-label">Processor</label>
+
+                      <a class="fa fa-info-circle" data-toggle="popover" title="Arquitectura del SO"
+                         data-content="x64: 1 <br /> x86: 2 <br /> arm64: 0 "
+                         data-html="true">
+                      </a>
+
+                      <input id="Processor" name="Processor" required type="number" placeholder="1" class="form-control">
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="control-label">OsBuild</label>
+
+                      <a class="fa fa-info-circle" data-toggle="popover" title="Compilación del SO"
+                         data-content="17134: 9 <br /> 16299: 7 <br /> 15063: 6"
+                         data-html="true">
+                      </a>
+
+                      <input id="OsBuild" name="OsBuild" required type="number" placeholder="9" class="form-control">
+                    </div>
+                  </div>
+                </div>
+
+
+                <!-- Fila 6 -->
+                <div class="container d-md-flex py-3">
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="control-label">OsSuite</label>
+
+                      <a class="fa fa-info-circle" data-toggle="popover" title="Máscara del SO"
+                         data-content="768: 3 <br /> 256: 0 <br /> 784: 4 "
+                         data-html="true">
+                      </a>
+
+                      <input id="OsSuite" name="OsSuite" required type="number" placeholder="0" class="form-control">
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="control-label">OsPlatformSubRelease</label>
+
+                      <a class="fa fa-info-circle" data-toggle="popover" title="Subversión de la plataforma SO"
+                         data-content="rs4: 4 <br /> rs3: 3 <br /> rs2: 2 <br /> rs1: 1 "
+                         data-html="true">
+                      </a>
+
+                      <input id="OsPlatformSubRelease" name="OsPlatformSubRelease" required type="number" placeholder="4" class="form-control">
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="control-label">IsProtected</label>
+
+                      <a class="fa fa-info-circle" data-toggle="popover" title="Si la máquina está protegida"
+                         data-content="0: no <br /> 1: si "
+                         data-html="true">
+                      </a>
+
+                      <input id="IsProtected" name="IsProtected" required type="number" placeholder="1" class="form-control">
+                    </div>
+                  </div>
+                </div>
+
+
+                <!-- Fila 7 -->
+                <div class="container d-md-flex py-3">
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="control-label">SMode</label>
+
+                      <a class="fa fa-info-circle" data-toggle="popover" title="Solo se pueden instalar aplicaciones de la tienda Microsoft"
+                         data-content="0: no <br /> 1: si "
+                         data-html="true">
+                      </a>
+
+                      <input id="SMode" name="SMode" required type="number" placeholder="0" class="form-control">
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="control-label">IeVerIdentifier</label>
+
+                      <a class="fa fa-info-circle" data-toggle="popover" title="Versión de Internet Explorer se está ejecutando en el dispositivo"
+                         data-content="Entre 0 y 58229"
+                         data-html="true">
+                      </a>
+
+                      <input id="IeVerIdentifier" name="IeVerIdentifier" required type="number" placeholder="97" class="form-control">
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="control-label">SmartScreen</label>
+
+                      <a class="fa fa-info-circle" data-toggle="popover" title="Ayuda a proteger a los usuarios de si intentan visitar sitios que anteriormente se informaron como sitios web de phishing o malware"
+                         data-content="requireadmin: 11 <br /> unknown: 12 <br />  existsnotset: 7 <br /> off: 8 "
+                         data-html="true">
+                      </a>
+
+                      <input id="SmartScreen" name="SmartScreen" required type="number" placeholder="12" class="form-control">
+                    </div>
+                  </div>
+                </div>
+
+
+                <!-- Fila 8 -->
+                <div class="container d-md-flex py-3">
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="control-label">Firewall</label>
+
+                      <a class="fa fa-info-circle" data-toggle="popover" title="Indica si el firewall está habilitado"
+                         data-content="0: no <br /> 1: si"
+                         data-html="true">
+                      </a>
+
+                      <input id="Firewall" name="Firewall" required type="number" placeholder="1" class="form-control">
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="control-label">UacLuaenable</label>
+
+                      <a class="fa fa-info-circle" data-toggle="popover" title="Si el tipo de usuario UAC está deshabilitado o habilitado"
+                         data-content="Entre 0 y 10"
+                         data-html="true">
+                      </a>
+
+                      <input id="UacLuaenable" name="UacLuaenable" required type="number" placeholder="1" class="form-control">
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="control-label">Census_MDC2FormFactor</label>
+
+                      <a class="fa fa-info-circle" data-toggle="popover" title="Tipo de hardware"
+                         data-content="notebook: 8  <br /> desktop: 2  <br /> convertible: 1 <br /> detachable: 3"
+                         data-html="true">
+                      </a>
+
+                      <input id="Census_MDC2FormFactor" name="Census_MDC2FormFactor" required type="number" placeholder="2" class="form-control">
+                    </div>
+                  </div>
+                </div>
+
+
+                <!-- Fila 9 -->
+                <div class="container d-md-flex py-3">
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="control-label">Census_DeviceFamily</label>
+
+                      <a class="fa fa-info-circle" data-toggle="popover" title="Tipo de dispositivo"
+                         data-content="windows.desktop: 1 <br /> windows.server: 2 <br /> windows: 0"
+                         data-html="true">
+                      </a>
+
+                      <input id="Census_DeviceFamily" name="Census_DeviceFamily" required type="number" placeholder="1" class="form-control">
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="control-label">Census_OEMNameIdentifier</label>
+
+                      <a class="fa fa-info-circle" data-toggle="popover" title="Nombre del identificador OEM"
+                         data-content="Entre 0 y 86193"
+                         data-html="true">
+                      </a>
+
+                      <input id="Census_OEMNameIdentifier" name="Census_OEMNameIdentifier" required type="number" placeholder="1668" class="form-control">
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="control-label">Census_OEMModelIdentifier</label>
+
+                      <a class="fa fa-info-circle" data-toggle="popover" title="Modelo del identificador OEM"
+                         data-content="Entre 0 y 262905"
+                         data-html="true">
+                      </a>
+
+                      <input id="Census_OEMModelIdentifier" name="Census_OEMModelIdentifier" required type="number" placeholder="4451" class="form-control">
+                    </div>
+                  </div>
+                </div>
+
+
+                <!-- Fila 10 -->
+                <div class="container d-md-flex py-3">
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="control-label">Census_ProcessorCoreCount</label>
+
+                      <a class="fa fa-info-circle" data-toggle="popover" title="Número de núcleos lógicos en el procesador"
+                         data-content="4.0: 3 <br /> 2.0: 1 <br /> 8.0: 7 <br /> 12.0: 11"
+                         data-html="true">
+                      </a>
+
+                      <input id="Census_ProcessorCoreCount" name="Census_ProcessorCoreCount" required type="number" placeholder="3" class="form-control">
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="control-label">Census_ProcessorManufacturerIdentifier</label>
+
+                      <a class="fa fa-info-circle" data-toggle="popover" title="ID de facturación de procesador"
+                         data-content="Entre 0 y 5"
+                         data-html="true">
+                      </a>
+
+                      <input id="Census_ProcessorManufacturerIdentifier" name="Census_ProcessorManufacturerIdentifier" required type="number" placeholder="3" class="form-control">
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="control-label">Census_PrimaryDiskTypeName</label>
+
+                      <a class="fa fa-info-circle" data-toggle="popover" title="Nombre descriptivo del tipo de disco primario"
+                         data-content="hdd: 0 <br /> ssd: 1 <br /> unknown: 2 "
+                         data-html="true">
+                      </a>
+
+                      <input id="Census_PrimaryDiskTypeName" name="Census_PrimaryDiskTypeName" required type="number" placeholder="0" class="form-control">
+                    </div>
+                  </div>
+                </div>
+
+
+                <!-- Fila 11 -->
+                <div class="container d-md-flex py-3">
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="control-label">Census_HasOpticalDiskDrive</label>
+
+                      <a class="fa fa-info-circle" data-toggle="popover" title="Indica que la máquina tiene una unidad de disco óptico (CD/DVD)"
+                         data-content="0: no <br /> 1: si"
+                         data-html="true">
+                      </a>
+
+                      <input id="Census_HasOpticalDiskDrive" name="Census_HasOpticalDiskDrive" required type="number" placeholder="0" class="form-control">
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="control-label">Census_ChassisTypeName</label>
+
+                      <a class="fa fa-info-circle" data-toggle="popover" title="Tipo de hardware tiene la máquina "
+                         data-content="notebook: 37 <br /> desktop: 24 <br /> laptop: 30 <br /> allinone: 18"
+                         data-html="true">
+                      </a>
+
+                      <input id="Census_ChassisTypeName" name="Census_ChassisTypeName" required type="number" placeholder="24" class="form-control">
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="control-label">Census_PowerPlatformRoleName</label>
+
+                      <a class="fa fa-info-circle" data-toggle="popover" title="Perfil de administración de energía preferido por el OEM"
+                         data-content="mobile: 3 <br /> desktop: 1 <br /> slate: 5 <br /> workstation: 8 "
+                         data-html="true">
+                      </a>
+
+                      <input id="Census_PowerPlatformRoleName" name="Census_PowerPlatformRoleName" required type="number" placeholder="1" class="form-control">
+                    </div>
+                  </div>
+                </div>
+
+
+                <!-- Fila 12 -->
+                <div class="container d-md-flex py-3">
+
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="control-label">Census_InternalPrimaryDiagonalDisplaySizeInInches</label>
+
+                      <a class="fa fa-info-circle" data-toggle="popover" title="Longitud diagonal física en pulgadas de la pantalla principal"
+                         data-content="15.5: 114 <br /> 13.9: 98 <br /> 14.0: 99 <br /> 21.5: 174"
+                         data-html="true">
+                      </a>
+
+                      <input id="Census_InternalPrimaryDiagonalDisplaySizeInInches" name="Census_InternalPrimaryDiagonalDisplaySizeInInches" required type="number" placeholder="148" class="form-control">
+                    </div>
+                  </div>
+
+
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="control-label">Census_InternalPrimaryDisplayResolutionHorizontal</label>
+
+                      <a class="fa fa-info-circle" data-toggle="popover" title="Número de píxeles en la dirección horizontal de la pantalla interna (número de líneas verticales) "
+                         data-content="1366.0: 616 <br /> 1920.0: 1150 <br /> 1280.0: 530 <br /> 1600.0: 845 <br /> 1024.0: 277"
+                         data-html="true">
+                      </a>
+
+                      <input id="Census_InternalPrimaryDisplayResolutionHorizontal" name="Census_InternalPrimaryDisplayResolutionHorizontal" required type="number" placeholder="689" class="form-control">
+                    </div>
+                  </div>
+                </div>
+
+
+                <!-- Fila 13 -->
+                <div class="container d-md-flex py-3">
+
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="control-label">Census_InternalBatteryNumberOfCharges</label>
+
+                      <a class="fa fa-info-circle" data-toggle="popover" title="Número de ciclos de la batería"
+                         data-content="0.000000e+00: 0 <br /> 4.294967e+09: 40983 <br /> 1.000000e+00: 1 <br /> 2.000000e+00: 2 "
+                         data-html="true">
+                      </a>
+
+                      <input id="Census_InternalBatteryNumberOfCharges" name="Census_InternalBatteryNumberOfCharges" required type="number" placeholder="40983" class="form-control">
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="control-label">Census_OSBuildRevision</label>
+
+                      <a class="fa fa-info-circle" data-toggle="popover" title="Valor de compilación del SO"
+                         data-content="Entre 0 y 281"
+                         data-html="true">
+                      </a>
+
+                      <input id="Census_OSBuildRevision" name="Census_OSBuildRevision" required type="number" placeholder="38" class="form-control">
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="control-label">Census_OSEdition</label>
+
+                      <a class="fa fa-info-circle" data-toggle="popover" title="Edición del SO"
+                         data-content="core: 1 <br/> professional: 10 <br /> coresinglelanguage: 3 <br /> corecountryspecific: 2"
+                         data-html="true">
+                      </a>
+
+                      <input id="Census_OSEdition" name="Census_OSEdition" required type="number" placeholder="10" class="form-control">
+                    </div>
+                  </div>
+                </div>
+
+
+                <!-- Fila 14 -->
+                <div class="container d-md-flex py-3">
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="control-label">Census_OSInstallLanguageIdentifier</label>
+
+                      <a class="fa fa-info-circle" data-toggle="popover" title="ID del idioma para el SO"
+                         data-content="Entre 0 y 55933"
+                         data-html="true">
+                      </a>
+
+                      <input id="Census_OSInstallLanguageIdentifier" name="Census_OSInstallLanguageIdentifier" required type="number" placeholder="25" class="form-control">
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="control-label">Census_OSWUAutoUpdateOptionsName</label>
+
+                      <a class="fa fa-info-circle" data-toggle="popover" title="Nombre descriptivo de la configuración de actualización automática de WindowsUpdate en la máquina"
+                         data-content="fullauto: 1 <br /> unknown: 4 <br /> notify: 2 <br /> autoinstallandrebootatmaintenancetime: 0 <br /> off: 3"
+                         data-html="true">
+                      </a>
+
+                      <input id="Census_OSWUAutoUpdateOptionsName" name="Census_OSWUAutoUpdateOptionsName" required type="number" placeholder="4" class="form-control">
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="control-label">Census_IsPortableOperatingSystem</label>
+
+                      <a class="fa fa-info-circle" data-toggle="popover" title="Indica si el sistema operativo se inicia y ejecuta en una memoria USB"
+                         data-content="0: no <br /> 1: si"
+                         data-html="true">
+                      </a>
+
+                      <input id="Census_IsPortableOperatingSystem" name="Census_IsPortableOperatingSystem" required type="number" placeholder="0" class="form-control">
+                    </div>
+                  </div>
+                </div>
+
+
+                <!-- Fila 15 -->
+                <div class="container d-md-flex py-3">
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="control-label">Census_GenuineStateName</label>
+
+                      <a class="fa fa-info-circle" data-toggle="popover" title="Nombre de OSGenuineStateID (si la licencia para Windows es original)"
+                         data-content="is_genuine: 1 <br /> invalid_license: 0 <br /> offline: 2 <br /> unknown: 4"
+                         data-html="true">
+                      </a>
+
+                      <input id="Census_GenuineStateName" name="Census_GenuineStateName" required type="number" placeholder="1" class="form-control">
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="control-label">Census_ActivationChannel</label>
+
+                      <a class="fa fa-info-circle" data-toggle="popover" title="Clave de licencia comercial "
+                         data-content="retail: 2 <br /> oem:dm: 0 <br /> volume:gvlk: 3 <br /> oem:nonslp: 1 br /> volume:mak: 4"
+                         data-html="true">
+                      </a>
+
+                      <input id="Census_ActivationChannel" name="Census_ActivationChannel" required type="number" placeholder="2" class="form-control">
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="control-label">Census_IsFlightsDisabled</label>
+
+                      <a class="fa fa-info-circle" data-toggle="popover" title="Indica si la variable está en 'flighting'"
+                         data-content="0: no <br /> 1: si"
+                         data-html="true">
+                      </a>
+
+                      <input id="Census_IsFlightsDisabled" name="Census_IsFlightsDisabled" required type="number" placeholder="0" class="form-control">
+                    </div>
+                  </div>
+                </div>
+
+
+                <!-- Fila 16 -->
+                <div class="container d-md-flex py-3">
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="control-label">Census_FlightRing</label>
+
+                      <a class="fa fa-info-circle" data-toggle="popover" title="Indica el anillo para el que el usuario del dispositivo desea recibir 'flights'"
+                         data-content="retail: 4 <br /> not_set: 2 <br /> unknown: 6"
+                         data-html="true">
+                      </a>
+
+                      <input id="Census_FlightRing" name="Census_FlightRing" required type="number" placeholder="4" class="form-control">
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="control-label">Census_FirmwareManufacturerIdentifier</label>
+
+                      <a class="fa fa-info-circle" data-toggle="popover" title="ID del fabricante del firmware"
+                         data-content="Entre 0 y 142236"
+                         data-html="true">
+                      </a>
+
+                      <input id="Census_FirmwareManufacturerIdentifier" name="Census_FirmwareManufacturerIdentifier" required type="number" placeholder="405" class="form-control" >
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="control-label">Census_FirmwareVersionIdentifier</label>
+
+                      <a class="fa fa-info-circle" data-toggle="popover" title="ID de la versión del firmware"
+                         data-content="Entre 0 y 168531"
+                         data-html="true">
+                      </a>
+
+                      <input id="Census_FirmwareVersionIdentifier" name="Census_FirmwareVersionIdentifier" required type="number" placeholder="24663" class="form-control">
+                    </div>
+                  </div>
+                </div>
+
+
+                <!-- Fila 17 -->
+                <div class="container d-md-flex py-3">
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="control-label">Census_IsSecureBootEnabled</label>
+
+                      <a class="fa fa-info-circle" data-toggle="popover" title="Indica si el modo de arranque seguro está habilitado"
+                         data-content="0: no <br /> 1: si"
+                         data-html="true">
+                      </a>
+
+                      <input id="Census_IsSecureBootEnabled" name="Census_IsSecureBootEnabled" required type="number" placeholder="0" class="form-control">
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="control-label">Census_IsVirtualDevice</label>
+
+                      <a class="fa fa-info-circle" data-toggle="popover" title="Identifica si es una máquina virtual"
+                         data-content="0: no <br /> 1: si"
+                         data-html="true">
+                      </a>
+
+                      <input id="Census_IsVirtualDevice" name="Census_IsVirtualDevice" required type="number" placeholder="0" class="form-control">
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="control-label">Census_IsTouchEnabled</label>
+
+                      <a class="fa fa-info-circle" data-toggle="popover" title="Indica si es un dispositivo táctil"
+                         data-content="0: no <br /> 1: si"
+                         data-html="true">
+                      </a>
+
+                      <input id="Census_IsTouchEnabled" name="Census_IsTouchEnabled" required type="number" placeholder="0" class="form-control">
+                    </div>
+                  </div>
+                </div>
+
+
+                <!-- Fila 17-18 -->
+                <div class="container d-md-flex py-3">
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="control-label">Census_IsAlwaysOnAlwaysConnectedCapable</label>
+
+                      <a class="fa fa-info-circle" data-toggle="popover" title="Recupera información sobre si la batería permite que el dispositivo se conecte Always-On-Always-Connected"
+                         data-content="0: no <br /> 1: si"
+                         data-html="true">
+                      </a>
+
+                      <input id="Census_IsAlwaysOnAlwaysConnectedCapable" name="Census_IsAlwaysOnAlwaysConnectedCapable" required type="number" placeholder="0" class="form-control">
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="control-label">Census_IsPenCapable</label>
+
+                      <a class="fa fa-info-circle" data-toggle="popover" title="Indica si el dispositivo es capaz de usar un lápiz"
+                         data-content="0: no <br /> 1: si"
+                         data-html="true">
+                      </a>
+
+                      <input id="Census_IsPenCapable" name="Census_IsPenCapable" required type="number" placeholder="0" class="form-control">
+                    </div>
+                  </div>
+                </div>
+
+
+                <!-- Fila 18 -->
+                <div class="container d-md-flex py-3">
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="control-label">Wdft_IsGamer</label>
+
+                      <a class="fa fa-info-circle" data-toggle="popover" title="Indica si el dispositivo es un dispositivo de jugador"
+                         data-content="0: no <br /> 1: si"
+                         data-html="true">
+                      </a>
+
+                      <input id="Wdft_IsGamer" name="Wdft_IsGamer" required type="number" placeholder="0" class="form-control">
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="control-label">Wdft_RegionIdentifier</label>
+
+                      <a class="fa fa-info-circle" data-toggle="popover" title="ID regional"
+                         data-content="Entre 0 y 282166"
+                         data-html="true">
+                      </a>
+
+                      <input id="Wdft_RegionIdentifier" name="Wdft_RegionIdentifier" required type="number" placeholder="9" class="form-control">
+                    </div>
+                  </div>
+                </div>
+
+
+                <!-- Fila 19 -->
+                <div class="container d-md-flex py-3">
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="control-label">Census_OSInstallTypeName</label>
+
+                      <a class="fa fa-info-circle" data-toggle="popover" title="Descripción de qué instalación se utilizó en la máquin"
+                         data-content="upgrade: 7 <br/> ibsclean: 2 <br /> update: 6 <br /> other: 3 <br /> reset: 5 <br /> refresh: 4"
+                         data-html="true">
+                      </a>
+
+                      <input id="Census_OSInstallTypeName" name="Census_OSInstallTypeName" required type="number" placeholder="7" class="form-control">
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="control-label">Census_TotalPhysicalRAMGB</label>
+
+                      <a class="fa fa-info-circle" data-toggle="popover" title="Infomación de la RAM física en GB"
+                         data-content="4, 8, 2, 16, 6, 12, 3, 1"
+                         data-html="true">
+                      </a>
+
+                      <input id="Census_TotalPhysicalRAMGB" name="Census_TotalPhysicalRAMGB" required type="number" placeholder="4" class="form-control">
+                    </div>
+                  </div>
+                </div>
+
+
+                <!-- Fila 20 -->
+                <div class="container d-md-flex py-3">
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="control-label">Census_SystemVolumeTotalCapacityGB</label>
+
+                      <a class="fa fa-info-circle" data-toggle="popover" title="Tamaño de la partición en la que está instalado el volumen del sistema en GB"
+                         data-content="460, 23, 926, 926, 113, 227"
+                         data-html="true">
+                      </a>
+
+                      <input id="Census_SystemVolumeTotalCapacityGB" name="Census_SystemVolumeTotalCapacityGB" required type="number" placeholder="287" class="form-control">
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="control-label">Census_PrimaryDiskTotalCapacityGB</label>
+
+                      <a class="fa fa-info-circle" data-toggle="popover" title="Cantidad de espacio en disco en el disco primario de la máquina en GB"
+                         data-content="403, 572, 285, 114, 232, 24"
+                         data-html="true">
+                      </a>
+
+                      <input id="Census_PrimaryDiskTotalCapacityGB" name="Census_PrimaryDiskTotalCapacityGB" required type="number" placeholder="403" class="form-control">
+                    </div>
+                  </div>
+                </div>
+
+
+              </form>
+            </div>
+    <!-- Formulario -->
+
+
+
+
+
+    <!-- Footer Elements -->
+    <footer class="bd-footer text-muted">
+      <div class="container-fluid p-md-5">
+        <ul class="bd-footer-links">
+          <p style="word-spacing: 1em;">
+            <a class="link font-weight-bold" href="https://github.com/Gecofer">GitHub</a>
+            <a class="link font-weight-bold" style="word-spacing: 2em;" href="https://www.linkedin.com/in/gema-correa/">LinkedIn</a>
+            <a class="link font-weight-bold" href="https://github.com/Gecofer/TFM_1920">TFM</a>
+            <a class="link font-weight-bold" href="https://www.kaggle.com/c/microsoft-malware-prediction/data">Kaggle</a>
+          </p>
+        </ul>
+          Diseñado y construido por <b>Gema Correa Fernández</b>.  <br>
+          Actualmente v0.1. © 2020 Copyright.
+      </div>
+    </footer>
+    <!-- Footer -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script>
+    $(document).ready(function(){
+      $('[data-toggle="popover"]').popover();
+    });
+
+     function toggleDarkLight() {
+       var body = document.getElementById("mybody");
+       var currentClass = body.className;
+       body.className = currentClass == "dark-mode" ? "light-mode" : "dark-mode";
+     }
+
+      Holder.addTheme('thumb', {
+        bg: '#55595c',
+        fg: '#eceeef',
+        text: 'Thumbnail'
+      });
+
+      function rellenar() {
+        document.getElementById("ProductName").value = document.getElementById("ProductName").placeholder;
+        document.getElementById("EngineVersion").value = document.getElementById("EngineVersion").placeholder;
+        document.getElementById("AppVersion").value = document.getElementById("AppVersion").placeholder;
+        document.getElementById("IsBeta").value = document.getElementById("IsBeta").placeholder;
+        document.getElementById("IsSxsPassiveMode").value = document.getElementById("IsSxsPassiveMode").placeholder;
+        document.getElementById("AVProductsInstalled").value = document.getElementById("AVProductsInstalled").placeholder;
+        document.getElementById("AVProductsEnabled").value = document.getElementById("AVProductsEnabled").placeholder;
+        document.getElementById("HasTpm").value = document.getElementById("HasTpm").placeholder;
+        document.getElementById("CountryIdentifier").value = document.getElementById("CountryIdentifier").placeholder;
+        document.getElementById("CityIdentifier").value = document.getElementById("CityIdentifier").placeholder;
+        document.getElementById("OrganizationIdentifier").value = document.getElementById("OrganizationIdentifier").placeholder;
+        document.getElementById("LocaleEnglishNameIdentifier").value = document.getElementById("LocaleEnglishNameIdentifier").placeholder;
+        document.getElementById("Platform").value = document.getElementById("Platform").placeholder;
+        document.getElementById("Processor").value = document.getElementById("Processor").placeholder;
+        document.getElementById("OsBuild").value = document.getElementById("OsBuild").placeholder;
+        document.getElementById("OsSuite").value = document.getElementById("OsSuite").placeholder;
+        document.getElementById("OsPlatformSubRelease").value = document.getElementById("OsPlatformSubRelease").placeholder;
+        document.getElementById("IsProtected").value = document.getElementById("IsProtected").placeholder;
+        document.getElementById("SMode").value = document.getElementById("SMode").placeholder;
+        document.getElementById("IeVerIdentifier").value = document.getElementById("IeVerIdentifier").placeholder;
+        document.getElementById("SmartScreen").value = document.getElementById("SmartScreen").placeholder;
+        document.getElementById("Firewall").value = document.getElementById("Firewall").placeholder;
+        document.getElementById("UacLuaenable").value = document.getElementById("UacLuaenable").placeholder;
+        document.getElementById("Census_MDC2FormFactor").value = document.getElementById("Census_MDC2FormFactor").placeholder;
+        document.getElementById("Census_DeviceFamily").value = document.getElementById("Census_DeviceFamily").placeholder;
+        document.getElementById("Census_OEMNameIdentifier").value = document.getElementById("Census_OEMNameIdentifier").placeholder;
+        document.getElementById("Census_OEMModelIdentifier").value = document.getElementById("Census_OEMModelIdentifier").placeholder;
+        document.getElementById("Census_ProcessorCoreCount").value = document.getElementById("Census_ProcessorCoreCount").placeholder;
+        document.getElementById("Census_ProcessorManufacturerIdentifier").value = document.getElementById("Census_ProcessorManufacturerIdentifier").placeholder;
+        document.getElementById("Census_PrimaryDiskTypeName").value = document.getElementById("Census_PrimaryDiskTypeName").placeholder;
+        document.getElementById("Census_HasOpticalDiskDrive").value = document.getElementById("Census_HasOpticalDiskDrive").placeholder;
+        document.getElementById("Census_ChassisTypeName").value = document.getElementById("Census_ChassisTypeName").placeholder;
+        document.getElementById("Census_InternalPrimaryDiagonalDisplaySizeInInches").value = document.getElementById("Census_InternalPrimaryDiagonalDisplaySizeInInches").placeholder;
+        document.getElementById("Census_InternalPrimaryDisplayResolutionHorizontal").value = document.getElementById("Census_InternalPrimaryDisplayResolutionHorizontal").placeholder;
+        document.getElementById("Census_PowerPlatformRoleName").value = document.getElementById("Census_PowerPlatformRoleName").placeholder;
+        document.getElementById("Census_InternalBatteryNumberOfCharges").value = document.getElementById("Census_InternalBatteryNumberOfCharges").placeholder;
+        document.getElementById("Census_OSBuildRevision").value = document.getElementById("Census_OSBuildRevision").placeholder;
+        document.getElementById("Census_OSEdition").value = document.getElementById("Census_OSEdition").placeholder;
+        document.getElementById("Census_OSInstallTypeName").value = document.getElementById("Census_OSInstallTypeName").placeholder;
+        document.getElementById("Census_OSInstallLanguageIdentifier").value = document.getElementById("Census_OSInstallLanguageIdentifier").placeholder;
+        document.getElementById("Census_OSWUAutoUpdateOptionsName").value = document.getElementById("Census_OSWUAutoUpdateOptionsName").placeholder;
+        document.getElementById("Census_IsPortableOperatingSystem").value = document.getElementById("Census_IsPortableOperatingSystem").placeholder;
+        document.getElementById("Census_GenuineStateName").value = document.getElementById("Census_GenuineStateName").placeholder;
+        document.getElementById("Census_ActivationChannel").value = document.getElementById("Census_ActivationChannel").placeholder;
+        document.getElementById("Census_IsFlightsDisabled").value = document.getElementById("Census_IsFlightsDisabled").placeholder;
+        document.getElementById("Census_FlightRing").value = document.getElementById("Census_FlightRing").placeholder;
+        document.getElementById("Census_FirmwareManufacturerIdentifier").value = document.getElementById("Census_FirmwareManufacturerIdentifier").placeholder;
+        document.getElementById("Census_FirmwareVersionIdentifier").value = document.getElementById("Census_FirmwareVersionIdentifier").placeholder;
+        document.getElementById("Census_IsSecureBootEnabled").value = document.getElementById("Census_IsSecureBootEnabled").placeholder;
+        document.getElementById("Census_IsVirtualDevice").value = document.getElementById("Census_IsVirtualDevice").placeholder;
+        document.getElementById("Census_IsTouchEnabled").value = document.getElementById("Census_IsTouchEnabled").placeholder;
+        document.getElementById("Census_IsPenCapable").value = document.getElementById("Census_IsPenCapable").placeholder;
+        document.getElementById("Census_IsAlwaysOnAlwaysConnectedCapable").value = document.getElementById("Census_IsAlwaysOnAlwaysConnectedCapable").placeholder;
+        document.getElementById("Wdft_IsGamer").value = document.getElementById("Wdft_IsGamer").placeholder;
+        document.getElementById("Wdft_RegionIdentifier").value = document.getElementById("Wdft_RegionIdentifier").placeholder;
+        document.getElementById("Census_TotalPhysicalRAMGB").value = document.getElementById("Census_TotalPhysicalRAMGB").placeholder;
+        document.getElementById("Census_SystemVolumeTotalCapacityGB").value = document.getElementById("Census_SystemVolumeTotalCapacityGB").placeholder;
+        document.getElementById("Census_PrimaryDiskTotalCapacityGB").value = document.getElementById("Census_PrimaryDiskTotalCapacityGB").placeholder;
+      }
+    </script>
+
+    </div>
+
+  </body>
+
+</html>

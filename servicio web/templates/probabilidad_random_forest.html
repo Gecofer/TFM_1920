@@ -1,0 +1,314 @@
+<!doctype html>
+
+<html lang="en">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Microsoft Malware Prediction</title>
+  </head>
+
+  <!-- Add icon library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Code CSS -->
+  <style>
+
+    /* Custom translucent site header */
+    .site-header {
+      background-color: rgba(0, 0, 0, .85);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      backdrop-filter: saturate(180%) blur(20px);
+    }
+    .site-header a {
+      color: #cfd8dc;
+      transition: ease-in-out color .15s;
+    }
+    .site-header a:hover {
+      color: #FFF;
+      text-decoration: none;
+    }
+
+    body.dark-mode {
+      background-color: #9e9e9e;
+      color: black;
+      a {
+        color: blue;
+      }
+      b {
+        color:black;
+      }
+      /* change the background color */
+      .moonbutton {
+        background-color: white;
+        color: gray;
+      }
+    }
+
+    body.light-mode {
+      background-color: white;
+      color: black;
+      a {
+        color: white;
+      }
+      .moonbutton {
+        background-color: black;
+        color: white;
+      }
+    }
+
+    .opacity {
+      background-color:rgb(255,0,0);
+      opacity:0.6; /* Opacidad 60% */
+    }
+
+    /* Extra utilities */
+    .border-top { border-top: 1px solid #e5e5e5; }
+    .border-bottom { border-bottom: 1px solid #e5e5e5; }
+    .box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
+
+    .flex-equal > * {
+      -ms-flex: 1;
+      -webkit-box-flex: 1;
+      flex: 1;
+    }
+    @media (min-width: 768px) {
+      .flex-md-equal > * {
+        -ms-flex: 1;
+        -webkit-box-flex: 1;
+        flex: 1;
+      }
+    }
+
+    .overflow-hidden { overflow: hidden; }
+
+    .boton-uno {
+      background-color: DodgerBlue;
+      border: none;
+      border-radius: 4px;
+      color: white;
+      padding: 12px 16px;
+      font-size: 10px;
+    }
+
+    .btn-uno:hover {
+      color: white;
+      background-color: #7452a8;
+      border-color: #6c757d;
+    }
+
+    .boton-tres {
+      background-color: #7452a8;
+      color: white;
+    }
+    .boton-tres:hover {
+      background: #513975;
+      color: #fff !important;
+    }
+
+    .boton-cuatro {
+      background-color: white;
+      border-color: #7452a8;
+      color: #7452a8;
+    }
+    .boton-cuatro:hover {
+      background: #513975;
+      color: #fff !important;
+    }
+
+    .bg-text{
+      color: white;
+    }
+
+    .body{
+      background-image: url("https://images.assetsdelivery.com/compings_v2/iunewind/iunewind1804/iunewind180400031.jpg");
+    }
+
+    .bg {
+      /* The image used */
+      background-image: url("https://image.freepik.com/vector-gratis/codigo-binario-fondo-negro_1302-11246.jpg");
+
+      /* Half height */
+      height: 50%;
+      width: auto;
+      opacity: 0.2;
+
+      /* Center and scale the image nicely */
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .bd-footer {
+      font-size: .875rem;
+      background-color: #f7f7f7;
+      text-align: left;
+    }
+
+    .text-muted {
+      color: #6c757d !important;
+    }
+
+    .bd-footer-links {
+      padding-left: 0;
+    }
+
+    .link {
+      padding-left: 0;
+      color: #6c757d;
+    }
+
+    code {
+      font-family: Consolas,"courier new";
+      color: #6c757d;
+      background-color: #f1f1f1;
+      padding: 2px;
+      font-size: 105%;
+    }
+
+    pre {
+      font-family: Consolas,"courier new";
+      color: #5a6168;
+      background-color: #f1f1f1;
+      padding: 2px;
+      font-size: 105%;
+    }
+
+    .formulario{
+      margin-left: 0px;
+      margin-right: 10px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+
+  </style>
+
+  <body id="mybody" class="light-mode">
+
+    <div >
+
+      <!-- Add navbar -->
+      <header class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar sticky-top" style="background-color: #7452a8">
+        <a class="navbar-brand mr-0 mr-md-2" href="/">
+          <svg class="bi bi-puzzle-fill" width="36" height="36" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M3.112 3.645A1.5 1.5 0 014.605 2H7a.5.5 0 01.5.5v.382c0 .696-.497 1.182-.872 1.469a.459.459 0 00-.115.118.113.113 0 00-.012.025L6.5 4.5v.003l.003.01c.004.01.014.028.036.053a.86.86 0 00.27.194C7.09 4.9 7.51 5 8 5c.492 0 .912-.1 1.19-.24a.86.86 0 00.271-.194.213.213 0 00.036-.054l.003-.01v-.008a.112.112 0 00-.012-.025.459.459 0 00-.115-.118c-.375-.287-.872-.773-.872-1.469V2.5A.5.5 0 019 2h2.395a1.5 1.5 0 011.493 1.645L12.645 6.5h.237c.195 0 .42-.147.675-.48.21-.274.528-.52.943-.52.568 0 .947.447 1.154.862C15.877 6.807 16 7.387 16 8s-.123 1.193-.346 1.638c-.207.415-.586.862-1.154.862-.415 0-.733-.246-.943-.52-.255-.333-.48-.48-.675-.48h-.237l.243 2.855A1.5 1.5 0 0111.395 14H9a.5.5 0 01-.5-.5v-.382c0-.696.497-1.182.872-1.469a.459.459 0 00.115-.118.113.113 0 00.012-.025L9.5 11.5v-.003l-.003-.01a.214.214 0 00-.036-.053.859.859 0 00-.27-.194C8.91 11.1 8.49 11 8 11c-.491 0-.912.1-1.19.24a.859.859 0 00-.271.194.214.214 0 00-.036.054l-.003.01v.002l.001.006a.113.113 0 00.012.025c.016.027.05.068.115.118.375.287.872.773.872 1.469v.382a.5.5 0 01-.5.5H4.605a1.5 1.5 0 01-1.493-1.645L3.356 9.5h-.238c-.195 0-.42.147-.675.48-.21.274-.528.52-.943.52-.568 0-.947-.447-1.154-.862C.123 9.193 0 8.613 0 8s.123-1.193.346-1.638C.553 5.947.932 5.5 1.5 5.5c.415 0 .733.246.943.52.255.333.48.48.675.48h.238l-.244-2.855z" clip-rule="evenodd"/>
+          </svg>
+        </a>
+
+        <div class="navbar-nav-scroll">
+          <ul class="navbar-nav bd-navbar-nav flex-row">
+            <li class="nav-item">
+              <a class="nav-link active" href="/">
+                <span class="h6">
+                  Home
+                </span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/regresion_logistica">Regresión Logística</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/random_forest">Random Forest</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/gradient_boosting">Gradient Boosting</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="http://127.0.0.1:5000/">MLflow</a>
+            </li>
+
+          </ul>
+        </div>
+
+        <ul class="navbar-nav ml-md-auto">
+
+          <li class="nav-item">
+            <a class="nav-item nav-link mr-md-2">
+              v0.1
+            </a>
+          </li>
+
+          <!-- Github -->
+          <li class="nav-item">
+            <a class="nav-item nav-link mr-md-2 btn fa fa-github" href="https://github.com/Gecofer">
+            </a>
+          </li>
+
+          <!--Linkedin -->
+          <li class="nav-item">
+            <a class="nav-item nav-link mr-md-2 btn fa fa-linkedin" href="https://www.linkedin.com/in/gema-correa/">
+            </a>
+          </li>
+
+        </ul>
+      </header>
+      <!-- End navbar -->
+
+
+      <!-- Add text -->
+      <div class="position-relative overflow-hidden text-left" style="background-color: #f5f5f5">
+        <div class="col-md-8 p-lg-4 mx-auto my-5">
+          <h2 class="mb-3">Random Forest</h2>
+            <p class="lead mb-4">
+               <strong> La probabilidad de que tu dispositivo Windows se infecte es </strong>  <kbd>{{malware}}</kbd>
+            </p>
+            <div class="d-flex flex-column flex-md-row">
+              <a href="/random_forest" class="btn boton-tres btn-lg mb-3 mr-md-3">Volver a predecir</a>
+            </div>
+        </div>
+      </div>
+
+
+    <!-- Footer Elements -->
+    <footer class="bd-footer text-muted">
+      <div class="container-fluid p-md-5">
+        <ul class="bd-footer-links">
+          <p style="word-spacing: 1em;">
+            <a class="link font-weight-bold" href="https://github.com/Gecofer">GitHub</a>
+            <a class="link font-weight-bold" style="word-spacing: 2em;" href="https://www.linkedin.com/in/gema-correa/">LinkedIn</a>
+            <a class="link font-weight-bold" href="https://github.com/Gecofer/TFM_1920">TFM</a>
+            <a class="link font-weight-bold" href="https://www.kaggle.com/c/microsoft-malware-prediction/data">Kaggle</a>
+          </p>
+        </ul>
+          Diseñado y construido por <b>Gema Correa Fernández</b>.  <br>
+          Actualmente v0.1. © 2020 Copyright.
+      </div>
+    </footer>
+    <!-- Footer -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script>
+     function toggleDarkLight() {
+       var body = document.getElementById("mybody");
+       var currentClass = body.className;
+       body.className = currentClass == "dark-mode" ? "light-mode" : "dark-mode";
+     }
+
+      Holder.addTheme('thumb', {
+        bg: '#55595c',
+        fg: '#eceeef',
+        text: 'Thumbnail'
+      });
+    </script>
+
+    </div>
+
+  </body>
+
+</html>

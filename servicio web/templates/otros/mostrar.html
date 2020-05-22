@@ -1,0 +1,205 @@
+<!doctype html>
+
+<html lang="en">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Formulario Modelo 1</title>
+  </head>
+
+  <!-- Add icon library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+  <!doctype html>
+
+  <html lang="en">
+
+    <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+      <title>Microsoft Malware Prediction</title>
+    </head>
+
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Code CSS -->
+    <style>
+
+      /* Custom translucent site header */
+      .site-header {
+        background-color: rgba(0, 0, 0, .85);
+        -webkit-backdrop-filter: saturate(180%) blur(20px);
+        backdrop-filter: saturate(180%) blur(20px);
+      }
+      .site-header a {
+        color: #cfd8dc;
+        transition: ease-in-out color .15s;
+      }
+      .site-header a:hover {
+        color: #FFF;
+        text-decoration: none;
+      }
+
+      body.dark-mode {
+        background-color: #2E4053;
+        color: white;
+        a {
+          color: blue;
+        }
+        b {
+          color:black;
+        }
+        /* change the background color */
+        .moonbutton {
+          background-color: white;
+          color: gray;
+        }
+      }
+
+      body.light-mode {
+        background-color: white;
+        color: black;
+        a {
+          color: black;
+        }
+        .moonbutton {
+          background-color: black;
+          color: white;
+        }
+      }
+
+      .opacity {
+        background-color:rgb(255,0,0);
+        opacity:0.6; /* Opacidad 60% */
+      }
+
+      /* Extra utilities */
+      .border-top { border-top: 1px solid #e5e5e5; }
+      .border-bottom { border-bottom: 1px solid #e5e5e5; }
+      .box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
+
+      .flex-equal > * {
+        -ms-flex: 1;
+        -webkit-box-flex: 1;
+        flex: 1;
+      }
+      @media (min-width: 768px) {
+        .flex-md-equal > * {
+          -ms-flex: 1;
+          -webkit-box-flex: 1;
+          flex: 1;
+        }
+      }
+
+      .overflow-hidden { overflow: hidden; }
+
+      .boton-uno {
+        background-color: DodgerBlue;
+        border: none;
+        border-radius: 4px;
+        color: white;
+        padding: 12px 16px;
+        font-size: 10px;
+        cursor: pointer;
+      }
+
+      .bg-text{
+        color: white;
+      }
+
+      .body{
+        background-image: url("https://image.freepik.com/vector-gratis/codigo-binario-fondo-negro_1302-11246.jpg");
+      }
+
+      .bg {
+        /* The image used */
+        background-image: url("https://image.freepik.com/vector-gratis/codigo-binario-fondo-negro_1302-11246.jpg");
+
+        /* Half height */
+        height: 50%;
+        width: auto;
+        opacity: 0.2;
+
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      .formulario{
+        margin-left: 0px;
+        margin-right: 10px;
+        margin-top: 50px;
+        margin-bottom: 10px;
+      }
+
+    </style>
+
+
+    <body id="mybody" class="light-mode">
+
+      <!-- Add navbar -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-ligh site-header sticky-top" style="background-color: #00838f">
+        <div class="container">
+          <a class="navbar-header" href="/">
+            <span class="h5"> Microsoft Malware Prediction</span>
+          </a>
+          <a class="nav-link" href="/">Inicio </a>
+          <a class="nav-link" href="">Modelo 1 </a>
+          <a class="nav-link" href="">Modelo 2 </a>
+          <a class="nav-link" href="">Modelo 3 </a>
+
+          <button class="btn btn-secondary" name="dark_light" onclick="toggleDarkLight()">
+            <i class="fa fa-moon-o d-none d-md-inline-block" aria-hidden="true"></i>
+          </button>
+        </div>
+      </nav>
+
+
+      <div class="col text-center">
+      <strong>Probabilidad: </strong> {{malware}}
+      </div>
+
+
+
+
+
+
+
+
+      <!-- Bootstrap core JavaScript
+      ================================================== -->
+      <!-- Placed at the end of the document so the pages load faster -->
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+      <script>
+       function toggleDarkLight() {
+         var body = document.getElementById("mybody");
+         var currentClass = body.className;
+         body.className = currentClass == "dark-mode" ? "light-mode" : "dark-mode";
+       }
+
+        Holder.addTheme('thumb', {
+          bg: '#55595c',
+          fg: '#eceeef',
+          text: 'Thumbnail'
+        });
+      </script>
+
+    </body>
+
+</html>
