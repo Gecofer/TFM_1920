@@ -17,6 +17,8 @@ Repositorio para el Trabajo de Fin de Máster (TFM) del Máster Universitario en
   - [Modelo de Gradient Boosting y xGBoost](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/6-MicrosoftMalwarePrediction-GradientBoosting.md)
   - [Puesta en producción de los modelos](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/7-MicrosoftMalwarePrediction-MLflow.md)
 - [Modelos en formato `.pkl`](https://github.com/Gecofer/TFM_1920/tree/master/modelos)
+- [Aplicación Web](#id10)
+  - [Herramienta MLflow en local](#id11)
 - [Referencias](#id20)
   - [Información administrativa sobre el TFM](#id21)
 - [Licencia](#id23)
@@ -171,9 +173,28 @@ with mlflow.start_run():
     mlflow.sklearn.log_model(rf_model_01, "RFmodel01")
 ~~~
 
+## Aplicación Web <a name="id10"></a>
 
-MLflow 
+### Herramienta MLflow en local <a name="id11"></a>
 
+Para para poner en producción modelos en local (después de haber ejecutado con éxito el notebook [`7-MicrosoftMalwarePrediction-MLflow.ipynb`](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/7-MicrosoftMalwarePrediction-MLflow.ipynb), es necesario poner la ruta donde se encuentra la ejecución del modelo
+
+~~~
+# Lanzar interfaz de mlflow ui (se abrirá en http://127.0.0.1:5000)
+mlflow ui
+
+# Poner en producción modelo RF (http://0.0.0.0:8001/invocations)
+mlflow models serve -m /Users/gema/Desktop/TFM/codigo/mlruns/0/72fd515589624214b2c41bcfa44aef17/artifacts/RFmodel01 -h 0.0.0.0 -p 8001
+
+# Poner en producción modelo RL (http://0.0.0.0:8002/invocations)
+mlflow models serve -m /Users/gema/Desktop/TFM/codigo/mlruns/0/aac82aa84f6d4b82adafd19fc2975050/artifacts/RLmodel01 -h 0.0.0.0 -p 8002
+
+# Poner en producción modelo GB (http://0.0.0.0:8003/invocations)
+mlflow models serve -m /Users/gema/Desktop/TFM/codigo/mlruns/0/326a8d2080934288afe93177737d3844/artifacts/GBmodel -h 0.0.0.0 -p 8003
+~~~
+
+
+Para lanzar la interfaz de MLflow
 
 
 [![videoMLflow](https://github.com/Gecofer/TFM_1920/blob/master/docs/imagenes/videoMLflow.png)](https://youtu.be/D9DVMN4F98c)
