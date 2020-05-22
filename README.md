@@ -37,6 +37,8 @@ La propuesta del TFM se puede encontrar [aquí](https://github.com/Gecofer/TFM_1
 
 En este trabajo se **desarrolla el enfoque actual de MLOps, desde la perspectiva de las empresas en España y su posible introducción al campo académico**. Además, se abordan distintos aspectos metodológicos, se proponen varias alternativas de arquitectura (herramientas y configuración del sistema) para llevar a cabo un MLOps de éxito. En términos generales, MLOps se basa en los principios y las prácticas de DevOps para aumentar la eficacia de los flujos de trabajo en los proyectos de Machine Learning. Asimismo, se presenta MLOps en casos reales de empresas donde el objetivo de negocio es detectar (predecir) la ocurrencia de un evento - como puede ser el fraude de transacciones online o el malware informático, entre otros. Para ello, será necesario mostrar cómo se desarrolla cada una de las etapas del proceso de modelización, incluyendo varias opciones de creación de variables para el modelo y métricas de diagnosis y selección de modelos de clasificación. Además, de introducir MLflow, plataforma que nos permite gestionar todo el ciclo de vida de Machine Learning.
 
+Los siguientes diagramas (realizados por mí) representan la arquitectura de MLOps tanto en local como en el cloud, que he realizado:
+
 <p align="center">
   <img src="docs/imagenes/EsquemaMLOpsLocal-Local.png">
 </p>
@@ -182,7 +184,7 @@ with mlflow.start_run():
 
 #### Poner en producción modelos con MLflow en local <a name="id12"></a>
 
-Para para poner en producción modelos en local (después de haber ejecutado el notebook [`7-MicrosoftMalwarePrediction-MLflow.ipynb`](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/7-MicrosoftMalwarePrediction-MLflow.ipynb), es necesario poner la ruta donde se encuentra el modelo creado, por ejemplo `/Users/gema/Desktop/TFM/codigo/mlruns/0/72fd515589624214b2c41bcfa44aef17/artifacts/RFmodel01` en local la ruta de Github (https://github.com/Gecofer/TFM_1920/tree/master/mlruns/0/326a8d2080934288afe93177737d3844/artifacts/GBmodel).
+Para para poner en producción modelos en local (ejecutar antes [`7-MicrosoftMalwarePrediction-MLflow.ipynb`](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/7-MicrosoftMalwarePrediction-MLflow.ipynb), es necesario poner la ruta donde se encuentra el modelo creado, por ejemplo en local `/Users/gema/Desktop/TFM/codigo/mlruns/0/72fd515589624214b2c41bcfa44aef17/artifacts/RFmodel01` o la ruta de Github (https://github.com/Gecofer/TFM_1920/tree/master/mlruns/0/326a8d2080934288afe93177737d3844/artifacts/GBmodel).
 
 ~~~
 # Lanzar interfaz de mlflow ui (se abrirá en http://127.0.0.1:5000)
