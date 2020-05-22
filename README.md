@@ -16,6 +16,7 @@ Repositorio para el Trabajo de Fin de Máster (TFM) del Máster Universitario en
   - [Modelo de Regresión Logística](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/5-MicrosoftMalwarePrediction-RegresionLogistica.md)
   - [Modelo de Gradient Boosting y xGBoost](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/6-MicrosoftMalwarePrediction-GradientBoosting.md)
   - [Puesta en producción de los modelos](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/7-MicrosoftMalwarePrediction-MLflow.md)
+- [Modelos en formato `.pkl`](https://github.com/Gecofer/TFM_1920/tree/master/modelos)
 - [Referencias](#id20)
   - [Información administrativa sobre el TFM](#id21)
 - [Licencia](#id23)
