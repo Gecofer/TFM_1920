@@ -38,7 +38,7 @@ La propuesta del TFM se puede encontrar [aquí](https://github.com/Gecofer/TFM_1
 
 En este trabajo se **desarrolla el enfoque actual de MLOps, desde la perspectiva de las empresas en España y su posible introducción al campo académico**. Además, se abordan distintos aspectos metodológicos, se proponen varias alternativas de arquitectura (herramientas y configuración del sistema) para llevar a cabo un MLOps de éxito. En términos generales, MLOps se basa en los principios y las prácticas de DevOps para aumentar la eficacia de los flujos de trabajo en los proyectos de Machine Learning. Asimismo, se presenta MLOps en casos reales de empresas donde el objetivo de negocio es detectar (predecir) la ocurrencia de un evento - como puede ser el fraude de transacciones online o el malware informático, entre otros. Para ello, será necesario mostrar cómo se desarrolla cada una de las etapas del proceso de modelización, incluyendo varias opciones de creación de variables para el modelo y métricas de diagnosis y selección de modelos de clasificación. Además, de introducir MLflow, plataforma que nos permite gestionar todo el ciclo de vida de Machine Learning.
 
-Los siguientes diagramas (realizados por mí) representan la arquitectura de MLOps tanto en local como en el cloud, que he realizado:
+En los siguientes diagramas (realizados por mí) se puede ver una idea de cuál va a ser la arquitectura a crear para el enfoque de MLOps tanto en local como en el cloud:
 
 <p align="center">
   <img src="docs/imagenes/EsquemaMLOpsLocal-Local.png">
@@ -182,6 +182,8 @@ with mlflow.start_run():
 ## Aplicación Web <a name="id10"></a>
 
 ### MLflow <a name="id11"></a>
+
+MLflow es una plataforma de código abierto para administrar el ciclo de vida de aprendizaje automático.
 
 #### Poner en producción modelos con MLflow en local <a name="id12"></a>
 
