@@ -87,6 +87,7 @@ La detección de malware es un problema propio de series temporales, pero se com
   <img width="600" height="390" src="docs/imagenes/submissions.png">
 </p>  
 
+Random Forest
 
 <p align="center">
   <img width="700" height="70" src="docs/imagenes/modelos/rf01.png">
@@ -98,6 +99,34 @@ La detección de malware es un problema propio de series temporales, pero se com
 
 <p align="center">
   <img width="700" height="350" src="docs/imagenes/modelos/rf03.png">
+</p>  
+
+Regresión Logística
+
+<p align="center">
+  <img width="700" height="70" src="docs/imagenes/modelos/rl01.png">
+</p>  
+
+<p align="center">
+  <img width="300" height="240" src="docs/imagenes/modelos/rl02.png">
+</p>  
+
+<p align="center">
+  <img width="700" height="350" src="docs/imagenes/modelos/rl03.png">
+</p>  
+
+Gradient Boosting
+
+<p align="center">
+  <img width="700" height="70" src="docs/imagenes/modelos/gb01.png">
+</p>  
+
+<p align="center">
+  <img width="300" height="240" src="docs/imagenes/modelos/gb02.png">
+</p>  
+
+<p align="center">
+  <img width="700" height="350" src="docs/imagenes/modelos/gb03.png">
 </p>  
 
 
