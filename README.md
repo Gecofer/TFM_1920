@@ -47,7 +47,7 @@ La detección de malware es un problema propio de series temporales, pero se com
 
 ## Notebooks <a name="id3"></a>
 
-- [`1-MicrosoftMalwarePrediction-CargarVisualizar`](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/1-MicrosoftMalwarePrediction-CargarVisualizar.ipynb) contiene el análisis descriptivo de los datos y un estudio exhaustivo de lo que significa cada variable (el PDF del notebook se encuentra [aquí](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/1-MicrosoftMalwarePrediction-CargarVisualizar.pdf)).
+- [`1-MicrosoftMalwarePrediction-CargarVisualizar`](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/1-MicrosoftMalwarePrediction-CargarVisualizar.ipynb) contiene el análisis descriptivo de los datos y un estudio exhaustivo de lo que significa cada variable (pincha [aquí](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/1-MicrosoftMalwarePrediction-CargarVisualizar.md) para saber más).
 
 <p align="center">
   <img src="docs/imagenes/tipos_variables.png">
@@ -65,7 +65,7 @@ La detección de malware es un problema propio de series temporales, pero se com
   <img src="docs/imagenes/missings10.png">
 </p>
 
-- [`2-MicrosoftMalwarePrediction-Preprocesamiento`](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/2-MicrosoftMalwarePrediction-Preprocesamiento.ipynb) contiene el preprocesamiento y tratamiento de los datos (el PDF del notebook se encuentra [aquí](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/2-MicrosoftMalwarePrediction-Preprocesamiento.pdf)).
+- [`2-MicrosoftMalwarePrediction-Preprocesamiento`](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/2-MicrosoftMalwarePrediction-Preprocesamiento.ipynb) contiene el preprocesamiento y tratamiento de los datos (pincha [aquí](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/2-MicrosoftMalwarePrediction-Preprocesamiento.md) para saber más).
   - Eliminar variables que no aportan información
   - Análisis de Componentes Principales (PCA)
   - Missings
@@ -91,13 +91,13 @@ La detección de malware es un problema propio de series temporales, pero se com
   <img width="500" height="400" src="docs/imagenes/CountryIdentifier.png">
 </p>  
 
-- [`3-MicrosoftMalwarePrediction-Kaggle.ipynb`](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/3-MicrosoftMalwarePrediction-Kaggle.ipynb) contiene un ejemplo con el algoritmo LightGBM para comprobar el submission en Kaggle (el PDF del notebook se encuentra [aquí](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/3-MicrosoftMalwarePrediction-Kaggle.pdf)).
+- [`3-MicrosoftMalwarePrediction-Kaggle.ipynb`](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/3-MicrosoftMalwarePrediction-Kaggle.ipynb) contiene un ejemplo con el algoritmo LightGBM para comprobar el submission en Kaggle (pincha [aquí](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/3-MicrosoftMalwarePrediction-Kaggle.md) para saber más).
 
 <p align="center">
   <img width="600" height="390" src="docs/imagenes/submissions.png">
 </p>  
 
-Random Forest
+- [`4-MicrosoftMalwarePrediction-RandomForest.md`](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/4-MicrosoftMalwarePrediction-RandomForest.ipynb) contiene el código para crear el modelo de Random Forest con varios ejemplos (pincha [aquí](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/4-MicrosoftMalwarePrediction-RandomForest.md) para saber más).
 
 <p align="center">
   <img width="700" height="70" src="docs/imagenes/modelos/rf01.png">
@@ -111,7 +111,7 @@ Random Forest
   <img width="700" height="350" src="docs/imagenes/modelos/rf03.png">
 </p>  
 
-Regresión Logística
+- [`5-MicrosoftMalwarePrediction-RegresionLogistica.ipynb`](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/5-MicrosoftMalwarePrediction-RegresionLogistica.ipynb) contiene el código para crear el modelo de Regresión Logística con varios ejemplos (pincha [aquí](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/5-MicrosoftMalwarePrediction-RegresionLogistica.md) para saber más).
 
 <p align="center">
   <img width="700" height="70" src="docs/imagenes/modelos/rl01.png">
@@ -125,7 +125,7 @@ Regresión Logística
   <img width="700" height="350" src="docs/imagenes/modelos/rl03.png">
 </p>  
 
-Gradient Boosting
+- [`6-MicrosoftMalwarePrediction-GradientBoosting.ipynb`](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/6-MicrosoftMalwarePrediction-GradientBoosting.ipynb) contiene el código para crear el modelo de Gradient Boosting y XGBoost con varios ejemplos (pincha [aquí](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/6-MicrosoftMalwarePrediction-GradientBoosting.md) para saber más).
 
 <p align="center">
   <img width="700" height="70" src="docs/imagenes/modelos/gb01.png">
@@ -139,12 +139,46 @@ Gradient Boosting
   <img width="700" height="350" src="docs/imagenes/modelos/gb03.png">
 </p>  
 
+- [`7-MicrosoftMalwarePrediction-MLflow.ipynb`](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/7-MicrosoftMalwarePrediction-MLflow.ipynb) contiene el código para realizar la puesta en producción de varios modelos con MLflow (pincha [aquí](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/7-MicrosoftMalwarePrediction-MLflow.md) para saber más).
+
+~~~python
+# Iniciamos 'mlflow'
+with mlflow.start_run():
+    
+    # Cargamos el modelo 01
+    pkl_filename_01 = "modelos/random_forest_01.pkl"
+    with open(pkl_filename_01, 'rb') as file:
+        rf_model_01 = pickle.load(file)
+        
+    # Obtenemos las predicciones con el modelo 01  
+    predict_01 = rf_model_01.predict(X_val)
+    
+    # Calculamos diversas medidas
+    (rmse, mae, logloss, accuracy, F1, precision, recall, auc) = eval_metricas(y_val, predict_01)
+
+    # Log mlflow parámetros
+    mlflow.log_metric("rmse", rmse)
+    mlflow.log_metric("mae", mae)
+    mlflow.log_metric("logloss", logloss)
+    mlflow.log_metric("accuracy", accuracy)
+    mlflow.log_metric("F1", F1)
+    mlflow.log_metric("precision", precision)
+    mlflow.log_metric("recall", recall)
+    mlflow.log_metric("auc", auc)
+
+    # Log modelo generado
+    mlflow.sklearn.log_model(rf_model_01, "RFmodel01")
+~~~
+
+
 MLflow 
 
-[![videoAppWeb](https://github.com/Gecofer/TFM_1920/blob/master/docs/imagenes/videoAppWeb.png)](https://youtu.be/pYRvOD7wp5s)
+
 
 [![videoMLflow](https://github.com/Gecofer/TFM_1920/blob/master/docs/imagenes/videoMLflow.png)](https://youtu.be/D9DVMN4F98c)
 
+
+[![videoAppWeb](https://github.com/Gecofer/TFM_1920/blob/master/docs/imagenes/videoAppWeb.png)](https://youtu.be/pYRvOD7wp5s)
 
 
 ## Referencias <a name="id20"></a>
