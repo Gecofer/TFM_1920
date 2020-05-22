@@ -139,7 +139,10 @@ Gradient Boosting
 
 MLflow 
 
-[![ScreenShot](https://raw.github.com/GabLeRoux/WebMole/master/ressources/WebMole_Youtube_Video.png)](https://youtu.be/ekfPIH3PmCs)
+[![videoAppWeb](https://github.com/Gecofer/TFM_1920/blob/master/docs/imagenes/videoAppWeb.png)](https://youtu.be/pYRvOD7wp5s)
+
+[![videoMLflow](https://github.com/Gecofer/TFM_1920/blob/master/docs/imagenes/videoMLflow.png)](https://youtu.be/D9DVMN4F98c)
+
 
 
 ## Referencias <a name="id20"></a>
