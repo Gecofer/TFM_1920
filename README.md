@@ -18,7 +18,10 @@ Repositorio para el Trabajo de Fin de Máster (TFM) del Máster Universitario en
   - [Puesta en producción de los modelos](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/7-MicrosoftMalwarePrediction-MLflow.md)
 - [Modelos en formato `.pkl`](https://github.com/Gecofer/TFM_1920/tree/master/modelos)
 - [Aplicación Web](#id10)
-  - [Herramienta MLflow en local](#id11)
+  - [MLflow](#id11)
+    - [Poner en producción modelos con MLflow en local](#id12)
+    - [Poner en producción modelos con MLflow en el cloud](#id13)
+  - [Funcionamiento de la aplicación Web](#id15)
 - [Referencias](#id20)
   - [Información administrativa sobre el TFM](#id21)
 - [Licencia](#id23)
@@ -179,7 +182,7 @@ with mlflow.start_run():
 
 #### Poner en producción modelos con MLflow en local <a name="id12"></a>
 
-Para para poner en producción modelos en local (después de haber ejecutado con éxito el notebook [`7-MicrosoftMalwarePrediction-MLflow.ipynb`](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/7-MicrosoftMalwarePrediction-MLflow.ipynb), es necesario poner la ruta donde se encuentra el modelo creado, por ejemplo `/Users/gema/Desktop/TFM/codigo/mlruns/0/72fd515589624214b2c41bcfa44aef17/artifacts/RFmodel01` en local o https://github.com/Gecofer/TFM_1920/tree/master/mlruns/0/326a8d2080934288afe93177737d3844/artifacts/GBmodel en Github.
+Para para poner en producción modelos en local (después de haber ejecutado el notebook [`7-MicrosoftMalwarePrediction-MLflow.ipynb`](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/7-MicrosoftMalwarePrediction-MLflow.ipynb), es necesario poner la ruta donde se encuentra el modelo creado, por ejemplo `/Users/gema/Desktop/TFM/codigo/mlruns/0/72fd515589624214b2c41bcfa44aef17/artifacts/RFmodel01` en local la ruta de Github (https://github.com/Gecofer/TFM_1920/tree/master/mlruns/0/326a8d2080934288afe93177737d3844/artifacts/GBmodel).
 
 ~~~
 # Lanzar interfaz de mlflow ui (se abrirá en http://127.0.0.1:5000)
@@ -199,12 +202,14 @@ Vídeo demostrativo para ver como lanzar la interfaz de MLflow:
 [![VideoMLflow](https://github.com/Gecofer/TFM_1920/blob/master/docs/imagenes/VideoMLflow.png)](https://youtu.be/D9DVMN4F98c)
 
 
-#### Poner en producción modelos con MLflow en el cloud <a name="id12"></a>
+#### Poner en producción modelos con MLflow en el cloud <a name="id13"></a>
 
 
-### Funcionamiento de la Aplicación Web
+### Funcionamiento de la aplicación Web <a name="id15"></a>
 
-Vídeo demostrativo del funcionamiento de la aplicación web:
+El funcionamiento de la aplicación Web es el mismo independiente de que la puesta en producción sea en local o en el cloud, simplemente se necesita acceso a la API del modelo o URI, para poner realizar las diversas peticiones o consultas.
+
+Vídeo demostrativo del funcionamiento de la aplicación Web:
 [![videoAppWeb](https://github.com/Gecofer/TFM_1920/blob/master/docs/imagenes/videoAppWeb.png)](https://youtu.be/pYRvOD7wp5s)
 
 
