@@ -209,6 +209,9 @@ Vídeo demostrativo para ver como lanzar la interfaz de MLflow:
 
 #### Poner en producción modelos con MLflow en el cloud <a name="id13"></a>
 
+Vídeo demostrativo del funcionamiento MLflow en Azure y funcionamiento final con Postman:
+[![videoMLflowAzure](https://github.com/Gecofer/TFM_1920/blob/master/docs/imagenes/videoMLflowAzure.png)](https://youtu.be/7nooCre8zQk)
+
 
 ### Funcionamiento de la aplicación Web <a name="id15"></a>
 
