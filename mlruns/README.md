@@ -1,6 +1,6 @@
 ## Puesta en producción de modelos con MLflow en local
 
-Para poner en producción modelos en local, es necesario antes ejecutar el notebook [`7-MicrosoftMalwarePrediction-MLflow.ipynb`](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/7-MicrosoftMalwarePrediction-MLflow.ipynb). Y a continuación, disponer de la ruta donde se encuentra el modelo creado, es decir, la carpeta del modelo, como por ejemplo, `/Users/gema/Desktop/TFM/codigo/mlruns/0/72fd515589624214b2c41bcfa44aef17/artifacts/RFmodel01`. Es posible realizar este proceso, descargando el repositiorio, en donde la carpeta que nos interesa se encontraría [aquí](https://github.com/Gecofer/TFM_1920/tree/master/mlruns/0/326a8d2080934288afe93177737d3844/artifacts/GBmodel).
+Para poner en producción modelos en local, es necesario antes ejecutar el notebook [`7-MicrosoftMalwarePrediction-MLflow.ipynb`](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/7-MicrosoftMalwarePrediction-MLflow.ipynb). Y a continuación, disponer de la ruta donde se encuentra el modelo creado, es decir, la carpeta del modelo, como por ejemplo, `mlruns/0/72fd515589624214b2c41bcfa44aef17/artifacts/RFmodel01`. Es posible realizar este proceso, descargando el repositiorio, en donde la carpeta que nos interesa se encontraría [aquí](https://github.com/Gecofer/TFM_1920/tree/master/mlruns/0/326a8d2080934288afe93177737d3844/artifacts/GBmodel).
 
 (1) Página con la interfaz de MLflow en local (se abre por defecto en el servicio http://127.0.0.1:5000), para lanzarla es necesario poner el comando `mlflow ui` en consola.
 
