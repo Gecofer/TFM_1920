@@ -36,13 +36,19 @@ Como comparativa de la herramienta MLflow en local, se ha realizado un ejemplo e
   <img src="../docs/imagenes/azure/7.png">
 </p>
 
+**(4)** Ahora cargamos nuestro modelo MLflow. Antes de que los modelos se puedan implementar en Azure ML, se debe crear un Azure ML Workspace. La función `azureml.core.Workspace.create()` cargará un espacio de trabajo con un nombre especificado o creará uno si aún no existe (hacemos uso de un recurso ya creado, y buscamos los valores de la configuración que necesitamos). Cuando ejecutamos esa función, es necesario autenticarse, a través de la URL, y meter un código de autenticación. Construimos nuestro modelo de Random Forest previamente entrenado y almacenado en MLflow en una imagen desplegable de Docker usando solo 3 líneas de código. Para crear el contenedor, se hace uso de YAML a través del fichero que se nos crea con el modelo en MLflow. Con la ejecución, vemos que nuestro modelo se registra en Azure ML Workspace.
+
 <p align="center">
   <img src="../docs/imagenes/azure/8.png">
 </p>
 
+**(5)** Una vez tenemos nuestro modelo, tenemos que pasar a crear la implementación del modelo. Para ello hay que crear un ACI (Azure Container Instances) y hacer el despliegue de servicio web utilizando la imagen del contenedor del modelo.
+
 <p align="center">
   <img src="../docs/imagenes/azure/9.png">
 </p>
+
+**(6)** Con la última ejecución, vemos que nuestro modelo se registra en Azure ML Workspace.
 
 <p align="center">
   <img src="../docs/imagenes/azure/10.png">
@@ -51,6 +57,8 @@ Como comparativa de la herramienta MLflow en local, se ha realizado un ejemplo e
 <p align="center">
   <img src="../docs/imagenes/azure/11.png">
 </p>
+
+**(7)** Se nos crea la implementación del modelo.
 
 <p align="center">
   <img src="../docs/imagenes/azure/12.png">
@@ -64,7 +72,7 @@ Como comparativa de la herramienta MLflow en local, se ha realizado un ejemplo e
   <img src="../docs/imagenes/azure/14.png">
 </p>
 
-() Ahora, consultaremos el endpoint del servicio web ACI enviando una solicitud HTTP POST que contenga el vector de entrada. Para ello, se define una función que tome 'scoring_uri' e ingrese JSON, y devuelva las predicciones, a partir de la URL del contenedor.
+**(8)** Ahora, consultaremos el endpoint del servicio web ACI enviando una solicitud HTTP POST que contenga el vector de entrada. Para ello, se define una función que tome 'scoring_uri' e ingrese JSON, y devuelva las predicciones, a partir de la URL del contenedor. Se ha realizado un ejemplo con Postman, pero indistintamente podría ser usado con la aplicación Web creada.
 
 <p align="center">
   <img src="../docs/imagenes/azure/15.png">
