@@ -209,9 +209,9 @@ mlflow models serve -m /Users/gema/Desktop/TFM/codigo/mlruns/0/326a8d2080934288a
 
 #### Poner en producción modelos con MLflow en el cloud <a name="id13"></a>
 
-Como comparativa de la herramienta MLflow en local, se ha realizado un ejemplo en el cloud (Microsoft Azure). En concreto, se hace uso de Azure Databricks, la cual tiene integrada MLflow (pincha [aquí](https://github.com/Gecofer/TFM_1920/tree/master/azure) para saber más)
+Como comparativa de la herramienta MLflow en local, se ha realizado un ejemplo en el cloud (Microsoft Azure). En concreto, se hace uso de Azure Databricks, la cual tiene integrada MLflow (pincha [aquí](https://github.com/Gecofer/TFM_1920/tree/master/azure) para saber más).
 
-Vídeo demostrativo del funcionamiento MLflow en Azure y funcionamiento final con Postman:
+>Vídeo demostrativo del funcionamiento MLflow en Azure y funcionamiento final con Postman:
 [![videoMLflowAzure](https://github.com/Gecofer/TFM_1920/blob/master/docs/imagenes/videoMLflowAzure.png)](https://youtu.be/7nooCre8zQk)
 
 
@@ -230,7 +230,7 @@ r = requests.post(url, data=data, headers=headers)
 return render_template("probabilidad_random_forest.html", malware = r.text)
 ~~~
 
-Vídeo demostrativo del funcionamiento de la aplicación Web:
+>Vídeo demostrativo del funcionamiento de la aplicación Web:
 [![videoAppWeb](https://github.com/Gecofer/TFM_1920/blob/master/docs/imagenes/videoAppWeb.png)](https://youtu.be/pYRvOD7wp5s)
 
 
