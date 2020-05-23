@@ -69,10 +69,10 @@ Para ver nuestros modelos, podemos ver cada una de las ejecuciones dentro de la 
   <img src="../docs/imagenes/mlflow/6.png">
 </p>
 
-Vídeo demostrativo para ver como lanzar la interfaz de MLflow: 
+**Vídeo demostrativo para ver como lanzar la interfaz de MLflow:** 
 [![videoMLflow](https://github.com/Gecofer/TFM_1920/blob/master/docs/imagenes/videoMLflow.png)](https://youtu.be/D9DVMN4F98c)
 
-Es importante destacar que en este proceso, tenemos creadas las ejecuciones de nuestros modelos. Sin embargo, tenemos que desplegar el modelo, creando una instancia para cada modelo con con Docker donde podremos acceder a la API de dicho modelo. Para ello, es necesario ejecutar en el terminal:
+Es importante destacar que en este proceso tenemos creadas las ejecuciones de nuestros modelos. Sin embargo, tenemos que desplegar el modelo creando una instancia para cada modelo con con Docker donde podremos acceder a la API de dicho modelo. Para ello, es necesario ejecutar en consola:
 
 ~~~
 # Poner en producción modelo RF (http://0.0.0.0:8001/invocations)
