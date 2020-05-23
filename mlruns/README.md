@@ -45,7 +45,7 @@ Para ver nuestros modelos, podemos ver cada una de las ejecuciones dentro de la 
   <img src="../docs/imagenes/mlflow/2.png">
 </p>
 
-**(3)** Página de información con el fichero YAML del modelo, con el se creará la instancia del modelo. YAML es el lenguaje en el que se definen los _pods_, los deployments y demás estructuras. Básicamente, es un fichero que nos implementa el contenedor que contendrá nuestro modelos con las dependencias necesarias.
+**(3)** Página de información con el fichero YAML del modelo, con él se creará la instancia del modelo. YAML es el lenguaje en el que se definen los _pods_, los deployments y demás estructuras. Básicamente, es un fichero que nos implementa el contenedor que contendrá nuestro modelos con las dependencias necesarias.
 
 <p align="center">
   <img src="../docs/imagenes/mlflow/3.png">
