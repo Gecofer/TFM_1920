@@ -77,3 +77,7 @@ Como comparativa de la herramienta MLflow en local, se ha realizado un ejemplo e
 <p align="center">
   <img src="../docs/imagenes/azure/15.png">
 </p>
+
+
+**Vídeo demostrativo del funcionamiento MLflow en Azure y funcionamiento final con Postman:**
+[![videoMLflowAzure](https://github.com/Gecofer/TFM_1920/blob/master/docs/imagenes/videoMLflowAzure.png)](https://youtu.be/7nooCre8zQk)
