@@ -204,7 +204,7 @@ mlflow models serve -m /Users/gema/Desktop/TFM/codigo/mlruns/0/326a8d2080934288a
 ~~~
 
 Vídeo demostrativo para ver como lanzar la interfaz de MLflow: 
-[![VideoMLflow](https://github.com/Gecofer/TFM_1920/blob/master/docs/imagenes/VideoMLflow.png)](https://youtu.be/D9DVMN4F98c)
+[![videoMLflow](https://github.com/Gecofer/TFM_1920/blob/master/docs/imagenes/videoMLflow.png)](https://youtu.be/D9DVMN4F98c)
 
 
 #### Poner en producción modelos con MLflow en el cloud <a name="id13"></a>
@@ -212,7 +212,7 @@ Vídeo demostrativo para ver como lanzar la interfaz de MLflow:
 
 ### Funcionamiento de la aplicación Web <a name="id15"></a>
 
-El funcionamiento de la aplicación Web es el mismo independiente de que la puesta en producción sea en local o en el cloud, simplemente se necesita acceso a la API del modelo o URI, para poner realizar las diversas peticiones o consultas.
+El funcionamiento de la aplicación Web es el mismo independiente de que la puesta en producción sea en local o en el cloud, simplemente se necesita acceso a la API del modelo o URI, para poner realizar las diversas peticiones o consultas. El código se encuentra [aquí](https://github.com/Gecofer/TFM_1920/tree/master/servicio%20web) y ha sido realizado con el lenguaje de programación Python, el framework [Flask](https://flask.palletsprojects.com/en/1.1.x/) y [Bootstrap](https://getbootstrap.com)
 
 Vídeo demostrativo del funcionamiento de la aplicación Web:
 [![videoAppWeb](https://github.com/Gecofer/TFM_1920/blob/master/docs/imagenes/videoAppWeb.png)](https://youtu.be/pYRvOD7wp5s)
