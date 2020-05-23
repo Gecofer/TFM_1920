@@ -212,7 +212,7 @@ Vídeo demostrativo para ver como lanzar la interfaz de MLflow:
 
 ### Funcionamiento de la aplicación Web <a name="id15"></a>
 
-El funcionamiento de la aplicación Web es el mismo independiente de que la puesta en producción sea en local o en el cloud, simplemente se necesita acceso a la API del modelo o URI para poner realizar las diversas peticiones o consultas. El código se encuentra [aquí](https://github.com/Gecofer/TFM_1920/tree/master/servicio%20web) y ha sido realizado con el lenguaje de programación Python, el framework [Flask](https://flask.palletsprojects.com/en/1.1.x/) y [Bootstrap](https://getbootstrap.com)
+El funcionamiento de la aplicación Web es el mismo independiente de que la puesta en producción sea en local o en el cloud, simplemente se necesita acceso a la API del modelo o URI para poner realizar las diversas peticiones o consultas. El código se encuentra [aquí](https://github.com/Gecofer/TFM_1920/tree/master/servicio%20web) y ha sido realizado con el lenguaje de programación Python, el framework [Flask](https://flask.palletsprojects.com/en/1.1.x/) y [Bootstrap](https://getbootstrap.com).
 
 ~~~python
 ...
