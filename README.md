@@ -150,34 +150,34 @@ La detección de malware es un problema propio de series temporales, pero se com
 
 - [`7-MicrosoftMalwarePrediction-MLflow.ipynb`](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/7-MicrosoftMalwarePrediction-MLflow.ipynb) contiene el código para realizar la puesta en producción de varios modelos con MLflow (pincha [aquí](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/7-MicrosoftMalwarePrediction-MLflow.md) para saber más).
 
-~~~python
-# Iniciamos 'mlflow'
-with mlflow.start_run():
-    
-    # Cargamos el modelo 01
-    pkl_filename_01 = "modelos/random_forest_01.pkl"
-    with open(pkl_filename_01, 'rb') as file:
-        rf_model_01 = pickle.load(file)
-        
-    # Obtenemos las predicciones con el modelo 01  
-    predict_01 = rf_model_01.predict(X_val)
-    
-    # Calculamos diversas medidas
-    (rmse, mae, logloss, accuracy, F1, precision, recall, auc) = eval_metricas(y_val, predict_01)
+  ~~~python
+  # Iniciamos 'mlflow'
+  with mlflow.start_run():
 
-    # Log mlflow parámetros
-    mlflow.log_metric("rmse", rmse)
-    mlflow.log_metric("mae", mae)
-    mlflow.log_metric("logloss", logloss)
-    mlflow.log_metric("accuracy", accuracy)
-    mlflow.log_metric("F1", F1)
-    mlflow.log_metric("precision", precision)
-    mlflow.log_metric("recall", recall)
-    mlflow.log_metric("auc", auc)
+      # Cargamos el modelo 01
+      pkl_filename_01 = "modelos/random_forest_01.pkl"
+      with open(pkl_filename_01, 'rb') as file:
+          rf_model_01 = pickle.load(file)
 
-    # Log modelo generado
-    mlflow.sklearn.log_model(rf_model_01, "RFmodel01")
-~~~
+      # Obtenemos las predicciones con el modelo 01  
+      predict_01 = rf_model_01.predict(X_val)
+
+      # Calculamos diversas medidas
+      (rmse, mae, logloss, accuracy, F1, precision, recall, auc) = eval_metricas(y_val, predict_01)
+
+      # Log mlflow parámetros
+      mlflow.log_metric("rmse", rmse)
+      mlflow.log_metric("mae", mae)
+      mlflow.log_metric("logloss", logloss)
+      mlflow.log_metric("accuracy", accuracy)
+      mlflow.log_metric("F1", F1)
+      mlflow.log_metric("precision", precision)
+      mlflow.log_metric("recall", recall)
+      mlflow.log_metric("auc", auc)
+
+      # Log modelo generado
+      mlflow.sklearn.log_model(rf_model_01, "RFmodel01")
+  ~~~
 
 ## Aplicación Web <a name="id10"></a>
 
@@ -187,7 +187,7 @@ MLflow es una plataforma de código abierto para administrar el ciclo de vida de
 
 #### Poner en producción modelos con MLflow en local <a name="id12"></a>
 
-Para poner en producción modelos en local (después de ejecutar [`7-MicrosoftMalwarePrediction-MLflow.ipynb`](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/7-MicrosoftMalwarePrediction-MLflow.ipynb)), es necesario poner la ruta donde se encuentra el modelo creado por la herramienta MLflow. Por ejemplo, mi ruta en local sería `/Users/gema/Desktop/TFM/codigo/mlruns/0/72fd515589624214b2c41bcfa44aef17/artifacts/RFmodel01` o la de Github https://github.com/Gecofer/TFM_1920/tree/master/mlruns/0/326a8d2080934288afe93177737d3844/artifacts/GBmodel.
+Para poner en producción modelos en local (después de ejecutar [`7-MicrosoftMalwarePrediction-MLflow.ipynb`](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/7-MicrosoftMalwarePrediction-MLflow.ipynb)), es necesario poner la ruta donde se encuentra el modelo creado por la herramienta MLflow. Por ejemplo, mi ruta en local sería `/Users/gema/Desktop/TFM/codigo/mlruns/0/72fd515589624214b2c41bcfa44aef17/artifacts/RFmodel01` o la de Github https://github.com/Gecofer/TFM_1920/tree/master/mlruns/0/326a8d2080934288afe93177737d3844/artifacts/GBmodel (pincha [aquí](https://github.com/Gecofer/TFM_1920/tree/master/mlruns) para saber más).
 
 ~~~
 # Lanzar interfaz de mlflow ui (se abrirá en http://127.0.0.1:5000)
@@ -203,7 +203,7 @@ mlflow models serve -m /Users/gema/Desktop/TFM/codigo/mlruns/0/aac82aa84f6d4b82a
 mlflow models serve -m /Users/gema/Desktop/TFM/codigo/mlruns/0/326a8d2080934288afe93177737d3844/artifacts/GBmodel -h 0.0.0.0 -p 8003
 ~~~
 
-Vídeo demostrativo para ver como lanzar la interfaz de MLflow: 
+> Vídeo demostrativo para ver como lanzar la interfaz de MLflow
 [![videoMLflow](https://github.com/Gecofer/TFM_1920/blob/master/docs/imagenes/videoMLflow.png)](https://youtu.be/D9DVMN4F98c)
 
 
