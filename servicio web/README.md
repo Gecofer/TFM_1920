@@ -1,6 +1,6 @@
 ## Funcionamiento de la aplicación Web
 
-El funcionamiento de la aplicación Web es el mismo independiente de que la puesta en producción sea en local o en el cloud, simplemente se necesita acceso a la API del modelo o URI para poner realizar las diversas peticiones o consultas. El código ha sido realizado con el lenguaje de programación Python, el framework [Flask](https://flask.palletsprojects.com/en/1.1.x/) y [Bootstrap](https://getbootstrap.com).
+El funcionamiento de la aplicación Web es el mismo independiente de que la puesta en producción del modelo y su despliegue sea en local o en el cloud, simplemente se necesita acceso a la API del modelo o URI para poner realizar las diversas peticiones o consultas. El código ha sido realizado con el lenguaje de programación Python, el framework [Flask](https://flask.palletsprojects.com/en/1.1.x/) y [Bootstrap](https://getbootstrap.com).
 
 ~~~python
 # app.py
