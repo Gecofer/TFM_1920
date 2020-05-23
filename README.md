@@ -203,7 +203,7 @@ mlflow models serve -m /Users/gema/Desktop/TFM/codigo/mlruns/0/aac82aa84f6d4b82a
 mlflow models serve -m /Users/gema/Desktop/TFM/codigo/mlruns/0/326a8d2080934288afe93177737d3844/artifacts/GBmodel -h 0.0.0.0 -p 8003
 ~~~
 
-> Vídeo demostrativo para ver como lanzar la interfaz de MLflow
+> Vídeo demostrativo para ver como lanzar la interfaz de MLflow:
 [![videoMLflow](https://github.com/Gecofer/TFM_1920/blob/master/docs/imagenes/videoMLflow.png)](https://youtu.be/D9DVMN4F98c)
 
 
@@ -211,7 +211,7 @@ mlflow models serve -m /Users/gema/Desktop/TFM/codigo/mlruns/0/326a8d2080934288a
 
 Como comparativa de la herramienta MLflow en local, se ha realizado un ejemplo en el cloud (Microsoft Azure). En concreto, se hace uso de Azure Databricks, la cual tiene integrada MLflow (pincha [aquí](https://github.com/Gecofer/TFM_1920/tree/master/azure) para saber más).
 
->Vídeo demostrativo del funcionamiento MLflow en Azure y funcionamiento final con Postman:
+>Vídeo demostrativo del funcionamiento de MLflow en Azure y funcionamiento final de MLOps con la herramienta Postman:
 [![videoMLflowAzure](https://github.com/Gecofer/TFM_1920/blob/master/docs/imagenes/videoMLflowAzure.png)](https://youtu.be/7nooCre8zQk)
 
 
