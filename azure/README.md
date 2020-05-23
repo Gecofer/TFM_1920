@@ -33,14 +33,6 @@ Como comparativa de la herramienta MLflow en local, se ha realizado un ejemplo e
 </p>
 
 <p align="center">
-  <img src="../docs/imagenes/azure/1.png">
-</p>
-
-<p align="center">
-  <img src="../docs/imagenes/azure/1.png">
-</p>
-
-<p align="center">
   <img src="../docs/imagenes/azure/7.png">
 </p>
 
