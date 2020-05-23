@@ -16,17 +16,17 @@ Como comparativa de la herramienta MLflow en local, se ha realizado un ejemplo e
   <img src="../docs/imagenes/azure/3.png">
 </p>
 
-**(2)** Se crea la instancia del modelo en MLflow. 
-
 <p align="center">
   <img src="../docs/imagenes/azure/4.png">
 </p>
 
-**(3)** Podemos ver cada una de las ejecuciones dentro de la GUI de Databricks, gracias a la integración de MLflow. Al hacer clic en cada entrada, se devuelven los detalles de la ejecución, los archivos que definen el modelo y mucho más. Y al hacer clic en la pestaña _Runs_ en la esquina superior derecha, observamos que podemos ver detalles sobre cada una de nuestras ejecuciones realizadas con MLflow. 
+**(2)** Se crea la instancia del modelo en MLflow. 
 
 <p align="center">
   <img src="../docs/imagenes/azure/5.png">
 </p>
+
+**(3)** Podemos ver cada una de las ejecuciones dentro de la GUI de Databricks, gracias a la integración de MLflow. Al hacer clic en cada entrada, se devuelven los detalles de la ejecución, los archivos que definen el modelo y mucho más. Y al hacer clic en la pestaña _Runs_ en la esquina superior derecha, observamos que podemos ver detalles sobre cada una de nuestras ejecuciones realizadas con MLflow. 
 
 <p align="center">
   <img src="../docs/imagenes/azure/6.png">
