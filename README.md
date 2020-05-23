@@ -15,7 +15,7 @@ Repositorio para el Trabajo de Fin de Máster (TFM) del Máster Universitario en
   - [Modelo de Random Forest](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/4-MicrosoftMalwarePrediction-RandomForest.md)
   - [Modelo de Regresión Logística](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/5-MicrosoftMalwarePrediction-RegresionLogistica.md)
   - [Modelo de Gradient Boosting y XGBoost](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/6-MicrosoftMalwarePrediction-GradientBoosting.md)
-  - [Puesta en producción de los modelos](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/7-MicrosoftMalwarePrediction-MLflow.md)
+  - [Crear la instancia del modelo en MLflow, para hacer luego la puesta en producción de los modelos](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/7-MicrosoftMalwarePrediction-MLflow.md)
 - [Ficheros con los modelos en formato `.pkl`](https://github.com/Gecofer/TFM_1920/tree/master/modelos)
 - [Aplicación Web](#id10)
   - [MLflow](#id11)
