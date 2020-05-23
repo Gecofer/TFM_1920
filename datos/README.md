@@ -1,6 +1,6 @@
 ## Datos
 
-Debido a la gran dimensionalidad de los datos (https://www.kaggle.com/c/microsoft-malware-prediction/data), se han subido un trozo de cada uno de ellos:
+Debido a la gran dimensionalidad de los datos (https://www.kaggle.com/c/microsoft-malware-prediction/data), se han subido un trozo de cada uno de ellos (originales, filtrados, partición):
 
 - `X_train.csv`: datos de entrenamiento obtenidos de la partición del conjunto de datos de aprendizaje (sin variable target)
 - `X_val.csv`: datos de validación obtenidos de la partición del conjunto de datos de aprendizaje	(sin variable target)
