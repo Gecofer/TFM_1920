@@ -2,7 +2,7 @@
 
 Para poner en producción modelos en local, es necesario antes ejecutar el notebook [`7-MicrosoftMalwarePrediction-MLflow.ipynb`](https://github.com/Gecofer/TFM_1920/blob/master/notebooks/7-MicrosoftMalwarePrediction-MLflow.ipynb). Y a continuación, disponer de la ruta donde se encuentra el modelo creado, es decir, la carpeta del modelo, como por ejemplo, `mlruns/0/72fd515589624214b2c41bcfa44aef17/artifacts/RFmodel01`. Es posible realizar este proceso, descargando el repositiorio, en donde la carpeta que nos interesa se encontraría [aquí](https://github.com/Gecofer/TFM_1920/tree/master/mlruns/0/326a8d2080934288afe93177737d3844/artifacts/GBmodel).
 
-(1) Página con la interfaz de MLflow en local (se abre por defecto en el servicio http://127.0.0.1:5000), para lanzarla es necesario poner el comando `mlflow ui` en consola.
+**(1)** Página con la interfaz de MLflow en local (se abre por defecto en el servicio http://127.0.0.1:5000), para lanzarla es necesario poner el comando `mlflow ui` en consola.
 
 <p align="center">
   <img src="../docs/imagenes/mlflow/1.png">
@@ -39,31 +39,31 @@ with mlflow.start_run():
 
 Para ver nuestros modelos, podemos ver cada una de las ejecuciones dentro de la interfaz. En las pestaña de _Runs_ observamos que podemos ver detalles sobre cada una de nuestras ejecuciones realizadas con MLflow. Al hacer clic en cada entrada, se devuelven los detalles de la ejecución, los archivos que definen el modelo y mucho más. 
 
-(2) Página con la información detallada de una ejecución de un modelo.
+**(2)** Página con la información detallada de una ejecución de un modelo.
 
 <p align="center">
   <img src="../docs/imagenes/mlflow/2.png">
 </p>
 
-(3) Página de información con el fichero YAML del modelo, con el se creará la instancia del modelo. YAML es el lenguaje en el que se definen los _pods_, los deployments y demás estructuras. Básicamente, es un fichero que nos implementa el contenedor que contendrá nuestro modelos con las dependencias necesarias.
+**(3)** Página de información con el fichero YAML del modelo, con el se creará la instancia del modelo. YAML es el lenguaje en el que se definen los _pods_, los deployments y demás estructuras. Básicamente, es un fichero que nos implementa el contenedor que contendrá nuestro modelos con las dependencias necesarias.
 
 <p align="center">
   <img src="../docs/imagenes/mlflow/3.png">
 </p>
 
-(4) Página con la selección de distintas ejecuciones con las que realizar comparaciones.
+**(4)** Página con la selección de distintas ejecuciones con las que realizar comparaciones.
 
 <p align="center">
   <img src="../docs/imagenes/mlflow/4.png">
 </p>
 
-(5) Página con la muestra comparativa de las tres ejecuciones seleccionadas.
+**(5)** Página con la muestra comparativa de las tres ejecuciones seleccionadas.
 
 <p align="center">
   <img src="../docs/imagenes/mlflow/5.png">
 </p>
 
-(6) Página con la muestra comparativa en gráfico de las tres ejecuciones seleccionadas.
+**(6)** Página con la muestra comparativa en gráfico de las tres ejecuciones seleccionadas.
 
 <p align="center">
   <img src="../docs/imagenes/mlflow/6.png">
