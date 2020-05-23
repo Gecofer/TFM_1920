@@ -209,13 +209,15 @@ Vídeo demostrativo para ver como lanzar la interfaz de MLflow:
 
 #### Poner en producción modelos con MLflow en el cloud <a name="id13"></a>
 
+Como comparativa de la herramienta MLflow en local, se ha realizado un ejemplo en el cloud (Microsoft Azure). En concreto, se hace uso de Azure Databricks, la cual tiene integrada MLflow (pincha [aquí](https://github.com/Gecofer/TFM_1920/tree/master/azure) para saber más)
+
 Vídeo demostrativo del funcionamiento MLflow en Azure y funcionamiento final con Postman:
 [![videoMLflowAzure](https://github.com/Gecofer/TFM_1920/blob/master/docs/imagenes/videoMLflowAzure.png)](https://youtu.be/7nooCre8zQk)
 
 
 ### Funcionamiento de la aplicación Web <a name="id15"></a>
 
-El funcionamiento de la aplicación Web es el mismo independiente de que la puesta en producción sea en local o en el cloud, simplemente se necesita acceso a la API del modelo o URI para poner realizar las diversas peticiones o consultas. El código se encuentra [aquí](https://github.com/Gecofer/TFM_1920/tree/master/servicio%20web) y ha sido realizado con el lenguaje de programación Python, el framework [Flask](https://flask.palletsprojects.com/en/1.1.x/) y [Bootstrap](https://getbootstrap.com).
+El funcionamiento de la aplicación Web es el mismo independiente de que la puesta en producción sea en local o en el cloud, simplemente se necesita acceso a la API del modelo o URI para poner realizar las diversas peticiones o consultas. El código se encuentra [aquí](https://github.com/Gecofer/TFM_1920/tree/master/servicio%20web) y ha sido realizado con el lenguaje de programación Python, el framework [Flask](https://flask.palletsprojects.com/en/1.1.x/) y [Bootstrap](https://getbootstrap.com) (pincha [aquí](https://github.com/Gecofer/TFM_1920/tree/master/servicio%20web) para saber más). 
 
 ~~~python
 ...
