@@ -2,6 +2,10 @@
 
 Repositorio para el Trabajo de Fin de Máster (TFM) del Máster Universitario en Tratamiento Estadístico Computacional de la Información (TECI) en el curso 2019/2020, realizado por Gema Correa Fernández.
 
+El PDF del TFM se encuentra [aquí](https://github.com/Gecofer/TFM_1920/blob/master/gema-correa-fernandez-jun20-TECI.pdf).
+
+La presentación del TFM se encuentra [aquí](https://github.com/Gecofer/TFM_1920/blob/master/presentacionTFM-MásterTECI.pdf).
+
 **Tabla de Contenidos**
 
 - [Objetivos](#id0)
